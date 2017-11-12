@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default snapshot 1`] = `
+<div
+  className="search-books-bar"
+>
+  <a
+    className="close-search"
+    href="/"
+  >
+    Close
+  </a>
+  <SearchInput
+    onChange={[Function]}
+  />
+</div>
+`;
