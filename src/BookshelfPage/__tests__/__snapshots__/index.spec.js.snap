@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot without books 1`] = `
+<div
+  className="list-books"
+>
+  <div
+    className="list-books-title"
+  >
+    <h1>
+      MyReads
+    </h1>
+  </div>
+  <div
+    className="list-books-content"
+  >
+    <div>
+      <Bookshelf
+        books={Array []}
+        name="Currently Reading"
+        type="READING"
+      />
+      <Bookshelf
+        books={Array []}
+        name="Read"
+        type="READ"
+      />
+      <Bookshelf
+        books={Array []}
+        name="Want to Read"
+        type="TO_READ"
+      />
+    </div>
+  </div>
+  <div
+    className="open-search"
+  >
+    <a
+      href="/"
+    >
+      Add a book
+    </a>
+  </div>
+</div>
+`;
