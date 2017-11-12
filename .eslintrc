@@ -8,10 +8,20 @@
   },
   "parser": "babel-eslint",
   "plugins": ["react", "import", "prettier"],
+  "rules": {
+    "react/forbid-prop-types": [0, { "forbid": "array" }]
+  },
   "overrides": [
     {
-      "files": ["**/__tests__/*.js", "**/*.test.js", "**/*.spec.js"],
+      "files": [
+        "index.js",
+        "**/__tests__/*.js", 
+        "**/*.test.js", 
+        "**/*.spec.js"
+      ],
       "rules": {
+        "no-unused-vars": false,
+        "no-undef": false, 
         "react/jsx-filename-extension": [0]
       }
     }
