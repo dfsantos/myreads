@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default snapshot 1`] = `
+<div
+  className="search-books"
+>
+  <SearchBar
+    onSearch={[Function]}
+    value=""
+  />
+  <SearchResult
+    books={Array []}
+  />
+</div>
+`;
