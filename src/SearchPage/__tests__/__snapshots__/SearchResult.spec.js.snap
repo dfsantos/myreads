@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty data snapshot 1`] = `
+<div
+  className="search-books-results"
+>
+  <ol
+    className="books-grid"
+  />
+</div>
+`;
+
+exports[`not empty data snapshot 1`] = `
+<div
+  className="search-books-results"
+>
+  <ol
+    className="books-grid"
+  >
+    <li
+      key="1"
+    >
+      Book A
+    </li>
+    <li
+      key="2"
+    >
+      Book B
+    </li>
+  </ol>
+</div>
+`;
