@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
-  authors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const style = {
@@ -13,7 +12,7 @@ const style = {
     'url("http://books.google.com/books/content?id=uu1mC6zWNTwC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73pGHfBNSsJG9Y8kRBpmLUft9O4BfItHioHolWNKOdLavw-SLcXADy3CPAfJ0_qMb18RmCa7Ds1cTdpM3dxAGJs8zfCfm8c6ggBIjzKT7XR5FIB53HHOhnsT7a0Cc-PpneWq9zX&source=gbs_api")',
 };
 
-function Book({ title, authors }) {
+function Book({ title }) {
   return (
     <div className="book">
       <div className="book-top">
@@ -31,7 +30,7 @@ function Book({ title, authors }) {
         </div>
       </div>
       <div className="book-title">{title}</div>
-      <div className="book-authors">{authors.join(', ')}</div>
+      <div className="book-authors">{[].join(', ')}</div>
     </div>
   );
 }

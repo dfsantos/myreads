@@ -6,7 +6,6 @@ exports[`default snapshot 1`] = `
 >
   <SearchBar
     onSearch={[Function]}
-    value=""
   />
   <SearchResult
     books={Array []}
