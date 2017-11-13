@@ -11,7 +11,6 @@ class SearchPage extends Component {
     super(props);
 
     this.state = {
-      searchQuery: '',
       searchResult: [],
     };
 
@@ -21,13 +20,13 @@ class SearchPage extends Component {
   async onSearch(event = EVENT_WRAPPER) {
     const searchQuery = event.target.value;
     const searchResult = await BooksAPI.search(searchQuery, 10);
-    this.setState({ searchQuery, searchResult });
+    this.setState({ searchResult });
   }
 
   render() {
     return (
       <div className="search-books">
-        <SearchBar value={this.state.searchQuery} onSearch={this.onSearch} />
+        <SearchBar onSearch={this.onSearch} />
         <SearchResult books={this.state.searchResult} />
       </div>
     );
