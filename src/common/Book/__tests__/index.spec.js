@@ -1,7 +1,7 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 
-import Book from '../Book';
+import Book from '../index';
 
 const TITLE = "Book's Title";
 const AUTHORS = ['Author of Book'];
