@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Bookshelf from './Bookshelf';
 
@@ -25,7 +26,7 @@ function BookshelfPage({ books }) {
         </div>
       </div>
       <div className="open-search">
-        <a href="/">Add a book</a>
+        <Link to="/add-book">Add a book</Link>
       </div>
     </div>
   );
