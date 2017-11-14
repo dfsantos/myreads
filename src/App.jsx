@@ -17,11 +17,7 @@ class App extends Component {
   }
 
   onCategorizeBook(book) {
-    this.setState(state => {
-      const { books } = state;
-      books.push(book);
-      return { books };
-    });
+    this.setState(state => ({ books: state.books.filter(_ => _.id !== book.id).concat(book) }));
   }
 
   render() {
