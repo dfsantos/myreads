@@ -36,8 +36,7 @@ class SearchPage extends Component {
 
   render() {
     const { searchResult } = this.state;
-    const { onCategorizeBook } = this.props;
-    const { onSearch } = this;
+    const { onCategorizeBook, onSearch } = this;
     return (
       <div className="search-books">
         <SearchBar onSearch={onSearch} />
