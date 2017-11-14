@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
+  onChangeBookCategory: PropTypes.func.isRequired,
 };
 
 const style = {
@@ -12,13 +13,13 @@ const style = {
     'url("http://books.google.com/books/content?id=uu1mC6zWNTwC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73pGHfBNSsJG9Y8kRBpmLUft9O4BfItHioHolWNKOdLavw-SLcXADy3CPAfJ0_qMb18RmCa7Ds1cTdpM3dxAGJs8zfCfm8c6ggBIjzKT7XR5FIB53HHOhnsT7a0Cc-PpneWq9zX&source=gbs_api")',
 };
 
-function Book({ title }) {
+function Book({ title, onChangeBookCategory }) {
   return (
     <div className="book">
       <div className="book-top">
         <div className="book-cover" style={style} />
         <div className="book-shelf-changer">
-          <select>
+          <select onChange={event => onChangeBookCategory(event.target.value)} defaultValue="none">
             <option value="none" disabled>
               Move to...
             </option>

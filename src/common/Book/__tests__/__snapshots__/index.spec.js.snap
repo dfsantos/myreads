@@ -20,7 +20,10 @@ exports[`default snapshot 1`] = `
     <div
       className="book-shelf-changer"
     >
-      <select>
+      <select
+        defaultValue="none"
+        onChange={[Function]}
+      >
         <option
           disabled={true}
           value="none"
@@ -57,8 +60,6 @@ exports[`default snapshot 1`] = `
   </div>
   <div
     className="book-authors"
-  >
-    Author of Book
-  </div>
+  />
 </div>
 `;
