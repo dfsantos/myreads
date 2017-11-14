@@ -5,22 +5,23 @@ import Book from '../common/Book';
 
 const propTypes = {
   books: PropTypes.array,
+  onCategorizeBook: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
   books: [],
 };
 
-const toBookItem = book => (
-  <li key={book.id}>
-    <Book title={book.title} />
-  </li>
-);
-
-function SearchResult({ books }) {
+function SearchResult({ books, onCategorizeBook }) {
   return (
     <div className="search-books-results">
-      <ol className="books-grid">{books.map(toBookItem)}</ol>
+      <ol className="books-grid">
+        {books.map(book => (
+          <li key={book.id}>
+            <Book title={book.title} onChangeBookCategory={onCategorizeBook(book)} />
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }

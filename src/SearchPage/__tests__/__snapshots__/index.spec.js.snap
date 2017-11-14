@@ -9,6 +9,7 @@ exports[`default snapshot 1`] = `
   />
   <SearchResult
     books={Array []}
+    onCategorizeBook={[Function]}
   />
 </div>
 `;

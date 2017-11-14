@@ -20,12 +20,18 @@ exports[`not empty data snapshot 1`] = `
     <li
       key="1"
     >
-      Book A
+      <Book
+        onChangeBookCategory={[Function]}
+        title="Book A"
+      />
     </li>
     <li
       key="2"
     >
-      Book B
+      <Book
+        onChangeBookCategory={[Function]}
+        title="Book B"
+      />
     </li>
   </ol>
 </div>
