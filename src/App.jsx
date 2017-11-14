@@ -12,13 +12,31 @@ class App extends Component {
     this.state = {
       books: [],
     };
+
+    this.onCategorizeBook = this.onCategorizeBook.bind(this);
   }
+
+  onCategorizeBook(book) {
+    this.setState(state => {
+      const { books } = state;
+      books.push(book);
+      return { books };
+    });
+  }
+
   render() {
     const { books } = this.state;
     return (
       <div className="App">
-        <Route exact path="/" render={() => <BookshelfPage books={books} />} />
-        <Route path="/add-book" component={SearchPage} />
+        <Route
+          exact
+          path="/"
+          render={() => <BookshelfPage books={books} onCategorizeBook={this.onCategorizeBook} />}
+        />
+        <Route
+          path="/add-book"
+          render={() => <SearchPage onCategorizeBook={this.onCategorizeBook} />}
+        />
       </div>
     );
   }
