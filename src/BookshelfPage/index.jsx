@@ -32,17 +32,15 @@ class BookshelfPage extends Component {
           <h1>MyReads</h1>
         </div>
         <div className="list-books-content">
-          <div>
-            {bookshelfConfig.map(bookshelf => (
-              <Bookshelf
-                key={bookshelf.type}
-                name={bookshelf.name}
-                category={bookshelf.type}
-                books={books}
-                onCategorizeBook={this.onCategorizeBook}
-              />
-            ))}
-          </div>
+          {bookshelfConfig.map(bookshelf => (
+            <Bookshelf
+              key={bookshelf.type}
+              name={bookshelf.name}
+              category={bookshelf.type}
+              books={books}
+              onCategorizeBook={this.onCategorizeBook}
+            />
+          ))}
         </div>
         <div className="open-search">
           <Link to="/search">Add a book</Link>
