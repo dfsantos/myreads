@@ -26,6 +26,7 @@ function Bookshelf({ name, category, books, onCategorizeBook }) {
             <li key={book.id}>
               <Book
                 title={book.title}
+                coverLink={book.imageLinks.thumbnail}
                 authors={book.authors}
                 onChangeBookCategory={onCategorizeBook(book)}
               />

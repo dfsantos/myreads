@@ -31,8 +31,8 @@ it('snapshot without books', () => {
 
 it('snapshot with books', () => {
   const books = [
-    { id: 1, title: 'Book A', category: BOOKSHELF_CATEGORY },
-    { id: 2, title: 'Book B', category: BOOKSHELF_CATEGORY },
+    { id: 1, title: 'Book A', category: BOOKSHELF_CATEGORY, imageLinks: { thumbnail: '' } },
+    { id: 2, title: 'Book B', category: BOOKSHELF_CATEGORY, imageLinks: { thumbnail: '' } },
   ];
   const wrapper = shallow(
     <Bookshelf
@@ -46,7 +46,12 @@ it('snapshot with books', () => {
 });
 
 it('onChangeBookCategory should be called with book as parameter', () => {
-  const book = { id: 1, title: 'Book A', category: BOOKSHELF_CATEGORY };
+  const book = {
+    id: 1,
+    title: 'Book A',
+    category: BOOKSHELF_CATEGORY,
+    imageLinks: { thumbnail: '' },
+  };
   const wrapper = shallow(
     <Bookshelf
       books={[book]}
@@ -59,8 +64,18 @@ it('onChangeBookCategory should be called with book as parameter', () => {
 });
 
 it('should filter book by shelf category', () => {
-  const bookA = { id: 1, title: 'Book A', category: BOOKSHELF_CATEGORY };
-  const bookB = { id: 2, title: 'Book B', category: 'wrongCategory' };
+  const bookA = {
+    id: 1,
+    title: 'Book A',
+    category: BOOKSHELF_CATEGORY,
+    imageLinks: { thumbnail: '' },
+  };
+  const bookB = {
+    id: 2,
+    title: 'Book B',
+    category: 'wrongCategory',
+    imageLinks: { thumbnail: '' },
+  };
   const wrapper = shallow(
     <Bookshelf
       books={[bookA, bookB]}

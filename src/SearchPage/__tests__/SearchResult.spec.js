@@ -17,7 +17,10 @@ it('empty data snapshot', () => {
 });
 
 it('not empty data snapshot', () => {
-  const books = [{ id: 1, title: 'Book A' }, { id: 2, title: 'Book B' }];
+  const books = [
+    { id: 1, title: 'Book A', imageLinks: { thumbnail: '' } },
+    { id: 2, title: 'Book B', imageLinks: { thumbnail: '' } },
+  ];
   const wrapper = shallow(
     <SearchResult searchQuery="" books={books} onCategorizeBook={onCategorizeBookListener} />
   );
@@ -25,7 +28,7 @@ it('not empty data snapshot', () => {
 });
 
 it('onCategorizeBookListener should be called with book as parameter', () => {
-  const book = { id: 1, title: 'Book A' };
+  const book = { id: 1, title: 'Book A', imageLinks: { thumbnail: '' } };
   const wrapper = shallow(
     <SearchResult searchQuery="" books={[book]} onCategorizeBook={onCategorizeBookListener} />
   );

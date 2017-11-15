@@ -11,13 +11,23 @@ const onChangeBookCategoryListener = jest.fn();
 
 it('should render without errors', () => {
   shallow(
-    <Book title={TITLE} authors={AUTHORS} onChangeBookCategory={onChangeBookCategoryListener} />
+    <Book
+      title={TITLE}
+      coverLink=""
+      authors={AUTHORS}
+      onChangeBookCategory={onChangeBookCategoryListener}
+    />
   );
 });
 
 it('default snapshot', () => {
   const wrapper = shallow(
-    <Book title={TITLE} authors={AUTHORS} onChangeBookCategory={onChangeBookCategoryListener} />
+    <Book
+      title={TITLE}
+      coverLink=""
+      authors={AUTHORS}
+      onChangeBookCategory={onChangeBookCategoryListener}
+    />
   );
   expect(toJson(wrapper)).toMatchSnapshot();
 });
@@ -26,7 +36,12 @@ it('on select change should call onChangeBookCategoryListener with selected valu
   const SELECTED_VALUE = 'read';
   const event = { target: { value: SELECTED_VALUE } };
   const wrapper = shallow(
-    <Book title={TITLE} authors={AUTHORS} onChangeBookCategory={onChangeBookCategoryListener} />
+    <Book
+      title={TITLE}
+      coverLink=""
+      authors={AUTHORS}
+      onChangeBookCategory={onChangeBookCategoryListener}
+    />
   );
   const select = wrapper.find('select');
 

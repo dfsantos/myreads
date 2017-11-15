@@ -25,7 +25,11 @@ function SearchResult({ searchQuery, books, onCategorizeBook }) {
       <ol className="books-grid">
         {books.map(book => (
           <li key={book.id}>
-            <Book title={book.title} onChangeBookCategory={onCategorizeBook(book)} />
+            <Book
+              title={book.title}
+              coverLink={book.imageLinks.thumbnail}
+              onChangeBookCategory={onCategorizeBook(book)}
+            />
           </li>
         ))}
       </ol>
