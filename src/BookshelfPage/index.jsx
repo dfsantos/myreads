@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Bookshelf from './Bookshelf';
+import bookshelfConfig from './bookshelfconfig.json';
 
 const propTypes = {
   books: PropTypes.array,
@@ -32,24 +33,15 @@ class BookshelfPage extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Bookshelf
-              name="Currently Reading"
-              category="currentlyReading"
-              books={books}
-              onCategorizeBook={this.onCategorizeBook}
-            />
-            <Bookshelf
-              name="Read"
-              category="read"
-              books={books}
-              onCategorizeBook={this.onCategorizeBook}
-            />
-            <Bookshelf
-              name="Want to Read"
-              category="wantToRead"
-              books={books}
-              onCategorizeBook={this.onCategorizeBook}
-            />
+            {bookshelfConfig.map(bookshelf => (
+              <Bookshelf
+                key={bookshelf.type}
+                name={bookshelf.name}
+                category={bookshelf.type}
+                books={books}
+                onCategorizeBook={this.onCategorizeBook}
+              />
+            ))}
           </div>
         </div>
         <div className="open-search">

@@ -1,0 +1,5 @@
+[
+  { "name": "Currently Reading", "type": "currentlyReading" },
+  { "name": "Read", "type": "read" },
+  { "name": "Want to Read", "type": "wantToRead" }
+]
