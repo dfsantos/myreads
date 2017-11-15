@@ -15,6 +15,7 @@ class SearchPage extends Component {
     super(props);
 
     this.state = {
+      searchQuery: '',
       searchResult: [],
     };
 
@@ -24,8 +25,12 @@ class SearchPage extends Component {
 
   async onSearch(event) {
     const searchQuery = event.target.value;
-    const searchResult = await BooksAPI.search(searchQuery, 10);
-    this.setState({ searchResult });
+    if (searchQuery.length === 0) {
+      this.setState({ searchQuery, searchResult: [] });
+    } else {
+      const result = await BooksAPI.search(searchQuery, 10);
+      this.setState({ searchQuery, searchResult: result.error ? [] : result });
+    }
   }
 
   onCategorizeBook(book) {
@@ -33,12 +38,16 @@ class SearchPage extends Component {
   }
 
   render() {
-    const { searchResult } = this.state;
+    const { searchQuery, searchResult } = this.state;
     const { onCategorizeBook, onSearch } = this;
     return (
       <div className="search-books">
         <SearchBar onSearch={onSearch} />
-        <SearchResult books={searchResult} onCategorizeBook={onCategorizeBook} />
+        <SearchResult
+          searchQuery={searchQuery}
+          books={searchResult}
+          onCategorizeBook={onCategorizeBook}
+        />
       </div>
     );
   }

@@ -34,6 +34,13 @@ it('should load state from localStorage', async () => {
   expect(localStorage.getItem).toHaveBeenCalledWith('state');
 });
 
+it('should ensure a consistent state when localStorage cannot return a state', async () => {
+  localStorage.getItem = jest.fn(() => null);
+  const wrapper = shallow(<App />);
+  expect(localStorage.getItem).toHaveBeenCalledWith('state');
+  expect(wrapper.state('books')).toBeDefined();
+});
+
 it('should save state in localStorage when state is updated', async () => {
   const wrapper = shallow(<App />);
   wrapper.state('books', [{ title: 'Any Book' }]);

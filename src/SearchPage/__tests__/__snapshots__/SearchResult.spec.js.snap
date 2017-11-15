@@ -4,6 +4,11 @@ exports[`empty data snapshot 1`] = `
 <div
   className="search-books-results"
 >
+  <div>
+    <span>
+      Your search did not match any books.
+    </span>
+  </div>
   <ol
     className="books-grid"
   />

@@ -4,10 +4,16 @@ exports[`default snpashot 1`] = `
 <div
   className="search-books-input-wrapper"
 >
-  <input
-    onChange={[Function]}
-    placeholder="Search by title or author"
-    type="text"
-  />
+  <Debounce
+    handler="onChange"
+    handlers={Array []}
+    time="500"
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Search by title or author"
+      type="text"
+    />
+  </Debounce>
 </div>
 `;
