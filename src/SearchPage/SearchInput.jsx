@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Debounce } from 'react-throttle';
 
 const propTypes = {
   onChange: PropTypes.func.isRequired,
@@ -8,7 +9,9 @@ const propTypes = {
 function SearchInput({ onChange }) {
   return (
     <div className="search-books-input-wrapper">
-      <input type="text" placeholder="Search by title or author" onChange={onChange} />
+      <Debounce time="500" handler="onChange">
+        <input type="text" placeholder="Search by title or author" onChange={onChange} />
+      </Debounce>
     </div>
   );
 }
