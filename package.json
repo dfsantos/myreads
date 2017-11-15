@@ -44,7 +44,11 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!<rootDir>/node_modules/"
+      "!<rootDir>/node_modules/",
+      "!src/BooksAPI.js",
+      "!src/polyfills.js",
+      "!src/setupTests.js",
+      "!src/index.js"
     ],
     "coverageThreshold": {
       "global": {

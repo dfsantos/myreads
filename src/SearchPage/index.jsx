@@ -6,8 +6,6 @@ import SearchResult from './SearchResult';
 
 import * as BooksAPI from '../BooksAPI';
 
-const EVENT_WRAPPER = { target: { value: '' } };
-
 const propTypes = {
   onCategorizeBook: PropTypes.func.isRequired,
 };
@@ -24,7 +22,7 @@ class SearchPage extends Component {
     this.onCategorizeBook = this.onCategorizeBook.bind(this);
   }
 
-  async onSearch(event = EVENT_WRAPPER) {
+  async onSearch(event) {
     const searchQuery = event.target.value;
     const searchResult = await BooksAPI.search(searchQuery, 10);
     this.setState({ searchResult });

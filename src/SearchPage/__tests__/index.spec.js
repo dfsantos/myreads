@@ -26,3 +26,16 @@ it('onSearch method should call BooksAPI.search with search query', async () => 
 
   expect(BooksAPI.search).toHaveBeenCalledWith(SEARCH_QUERY, 10);
 });
+
+it('onCategorizeBook method should a function to be used for categorize book', () => {
+  const book = {};
+  const wrapper = shallow(<SearchPage onCategorizeBook={onCategorizeBookListener} />);
+  expect(wrapper.instance().onCategorizeBook(book)).toBeInstanceOf(Function);
+});
+
+it('', () => {
+  const book = {};
+  const wrapper = shallow(<SearchPage onCategorizeBook={onCategorizeBookListener} />);
+  wrapper.instance().onCategorizeBook(book)('read');
+  expect(onCategorizeBookListener).toHaveBeenCalled();
+});
