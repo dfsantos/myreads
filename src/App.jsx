@@ -38,7 +38,7 @@ class App extends Component {
           )}
         />
         <Route
-          path="/add-book"
+          path="/search"
           render={() => <SearchPage onCategorizeBook={this.onCategorizeBook} />}
         />
       </div>
