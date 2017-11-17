@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
+import SearchSuggestion from './SearchSuggestion';
 
 import * as BooksAPI from '../BooksAPI';
+
+import words from './search_suggestions.json';
 
 const propTypes = {
   onCategorizeBook: PropTypes.func.isRequired,
@@ -43,6 +46,7 @@ class SearchPage extends Component {
     return (
       <div className="search-books">
         <SearchBar onSearch={onSearch} />
+        <SearchSuggestion words={words} pause={searchQuery.length > 0} />
         <SearchResult
           searchQuery={searchQuery}
           books={searchResult}
