@@ -16,7 +16,11 @@ class SearchSuggestion extends Component {
     super(props);
     this.state = { words: _.shuffle(props.words) };
     this.suggestWord = this.suggestWord.bind(this);
-    setInterval(this.suggestWord, 2500);
+    this.stop = setInterval(this.suggestWord, 2500);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.stop);
   }
 
   suggestWord() {
