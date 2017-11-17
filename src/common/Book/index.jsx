@@ -5,9 +5,14 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   onChangeBookCategory: PropTypes.func.isRequired,
   coverLink: PropTypes.string.isRequired,
+  authors: PropTypes.arrayOf(PropTypes.string),
 };
 
-function Book({ title, coverLink, onChangeBookCategory }) {
+const defaultProps = {
+  authors: [],
+};
+
+function Book({ title, authors, coverLink, onChangeBookCategory }) {
   return (
     <div className="book">
       <div className="book-top">
@@ -28,11 +33,12 @@ function Book({ title, coverLink, onChangeBookCategory }) {
         </div>
       </div>
       <div className="book-title">{title}</div>
-      <div className="book-authors">{[].join(', ')}</div>
+      <div className="book-authors">{authors.join(', ')}</div>
     </div>
   );
 }
 
 Book.propTypes = propTypes;
+Book.defaultProps = defaultProps;
 
 export default Book;

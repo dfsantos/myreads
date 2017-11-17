@@ -11,19 +11,6 @@
     "react-throttle": "^0.3.0",
     "underscore": "^1.8.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "enzyme": "^3.1.1",
@@ -60,5 +47,18 @@
         "statements": 95
       }
     }
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
