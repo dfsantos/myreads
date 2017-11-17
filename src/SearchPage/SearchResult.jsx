@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Book from '../common/Book';
+import BookCard from './BookCard';
 
 const propTypes = {
   searchQuery: PropTypes.string.isRequired,
@@ -22,17 +22,13 @@ function SearchResult({ searchQuery, books, onCategorizeBook }) {
           <span>Your search did not match any books.</span>
         </div>
       )}
-      <ol className="books-grid">
+      <ul style={{ listStyle: 'none' }}>
         {books.map(book => (
-          <li key={book.id}>
-            <Book
-              title={book.title}
-              coverLink={book.imageLinks.thumbnail}
-              onChangeBookCategory={onCategorizeBook(book)}
-            />
+          <li key={book.id} style={{ borderBottom: '1px solid #CFD8DC', padding: 10 }}>
+            <BookCard book={book} onCategorizeBook={onCategorizeBook(book)} />
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
   );
 }
