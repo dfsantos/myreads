@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Bookshelf from './Bookshelf';
-import bookshelfConfig from './bookshelfconfig.json';
+import bookshelfConfig from '../../config/bookshelf.config.json';
 
 const propTypes = {
   books: PropTypes.array,

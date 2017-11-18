@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 html {
   box-sizing: border-box;
 }
@@ -5,7 +7,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 body {
   margin: 0;

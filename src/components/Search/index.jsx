@@ -5,9 +5,9 @@ import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
 import SearchSuggestion from './SearchSuggestion';
 
-import * as BooksAPI from '../BooksAPI';
+import * as BooksAPI from '../../api/BooksAPI';
 
-import words from './search_suggestions.json';
+import words from '../../config/suggestion.config.json';
 
 const propTypes = {
   onCategorizeBook: PropTypes.func.isRequired,

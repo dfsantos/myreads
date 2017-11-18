@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
-import BookshelfPage from './BookshelfPage';
-import SearchPage from './SearchPage';
-import './App.css';
+import BookshelfPage from '../Bookshelf';
+import SearchPage from '../Search';
 
 const persistState = state => window.localStorage.setItem('state', JSON.stringify(state));
 const loadState = () => JSON.parse(window.localStorage.getItem('state')) || { books: [] };
