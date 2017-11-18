@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
@@ -15,9 +15,15 @@ function SideBar({ open, onClose }) {
   return (
     <Drawer docked={false} open={open} onRequestChange={onClose}>
       <AppBar title="My Reads" onLeftIconButtonTouchTap={onClose} />
-      <MenuItem>My Shelves</MenuItem>
-      <MenuItem>Search</MenuItem>
-      <MenuItem>Configurations</MenuItem>
+      <MenuItem>
+        <Link to="/">My Shelves</Link>
+      </MenuItem>
+      <MenuItem>
+        <Link to="/search">Search</Link>
+      </MenuItem>
+      <MenuItem>
+        <Link to="/configuration">Configurations</Link>
+      </MenuItem>
     </Drawer>
   );
 }

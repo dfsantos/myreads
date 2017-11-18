@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 
 import AppBar from 'material-ui/AppBar';
 import SideBar from '../SideBar';
-import BookshelfPage from '../Bookshelf';
-import SearchPage from '../Search';
+import Bookshelf from '../Bookshelf';
+import Search from '../Search';
 
 const persistState = state => window.localStorage.setItem('state', JSON.stringify(state));
 const loadState = () =>
@@ -44,13 +44,10 @@ class App extends Component {
           exact
           path="/"
           render={() => (
-            <BookshelfPage books={this.state.books} onCategorizeBook={this.onCategorizeBook} />
+            <Bookshelf books={this.state.books} onCategorizeBook={this.onCategorizeBook} />
           )}
         />
-        <Route
-          path="/search"
-          render={() => <SearchPage onCategorizeBook={this.onCategorizeBook} />}
-        />
+        <Route path="/search" render={() => <Search onCategorizeBook={this.onCategorizeBook} />} />
       </div>
     );
   }
