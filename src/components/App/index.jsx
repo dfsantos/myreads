@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
+import AppBar from 'material-ui/AppBar';
 import BookshelfPage from '../Bookshelf';
 import SearchPage from '../Search';
 
@@ -29,6 +30,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <AppBar title="My Reads" />
         <Route
           exact
           path="/"
