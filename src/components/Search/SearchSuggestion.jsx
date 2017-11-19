@@ -36,8 +36,7 @@ class SearchSuggestion extends Component {
       <div>
         {!this.props.pause && (
           <div className="search-suggestion">
-            Try search for <br />
-            "{this.state.words[0]}"
+            Try search for "{this.state.words[0].toLowerCase()}"
           </div>
         )}
       </div>

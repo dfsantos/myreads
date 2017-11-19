@@ -3,17 +3,15 @@ import { Route } from 'react-router-dom';
 
 import AppBar from 'material-ui/AppBar';
 import SideBar from '../SideBar';
-import Bookshelf from '../Bookshelf';
+import Shelves from '../Shelves';
 import Search from '../Search';
 
-const persistState = state => window.localStorage.setItem('state', JSON.stringify(state));
-const loadState = () =>
-  JSON.parse(window.localStorage.getItem('state')) || { books: [], open: false };
+import * as State from '../../utils/state';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = State.load();
     this.onCategorizeBook = this.onCategorizeBook.bind(this);
     this.handleToggleSideBar = this.handleToggleSideBar.bind(this);
   }
@@ -23,29 +21,24 @@ class App extends Component {
       const books = state.books
         .filter(it => it.id !== book.id)
         .concat(book.category !== 'none' ? book : []);
-
-      const newState = { books };
-      persistState(newState);
-      return newState;
-    });
+      return { books };
+    }, State.persist(this.state));
   }
 
   handleToggleSideBar() {
-    this.setState(state => ({ open: !state.open }));
+    this.setState(state => ({ isSideBarOpen: !state.isSideBarOpen }));
   }
 
   render() {
-    const { open } = this.state;
+    const { books, isSideBarOpen } = this.state;
     return (
       <div className="App">
-        <AppBar title="My Reads" onLeftIconButtonTouchTap={this.handleToggleSideBar} />
-        <SideBar open={open} onClose={this.handleToggleSideBar} />
+        <AppBar title="BookFlix" onLeftIconButtonTouchTap={this.handleToggleSideBar} />
+        <SideBar open={isSideBarOpen} onClose={this.handleToggleSideBar} />
         <Route
           exact
           path="/"
-          render={() => (
-            <Bookshelf books={this.state.books} onCategorizeBook={this.onCategorizeBook} />
-          )}
+          render={() => <Shelves books={books} onCategorizeBook={this.onCategorizeBook} />}
         />
         <Route path="/search" render={() => <Search onCategorizeBook={this.onCategorizeBook} />} />
       </div>

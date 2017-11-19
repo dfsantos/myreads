@@ -37,7 +37,9 @@ class SearchPage extends Component {
   }
 
   onCategorizeBook(book) {
-    return category => this.props.onCategorizeBook(Object.assign(book, { category }));
+    return category => {
+      this.props.onCategorizeBook(Object.assign(book, { category }));
+    };
   }
 
   render() {

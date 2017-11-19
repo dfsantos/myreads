@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+
+import ActionFlightTakeoff from 'material-ui/svg-icons/action/search';
 
 import SearchInput from './SearchInput';
 
@@ -11,9 +12,9 @@ const propTypes = {
 function SearchBar({ onSearch }) {
   return (
     <div className="search-books-bar">
-      <Link to="/" className="close-search">
-        Close
-      </Link>
+      <div style={{ padding: 12 }}>
+        <ActionFlightTakeoff />
+      </div>
       <SearchInput onChange={onSearch} />
     </div>
   );

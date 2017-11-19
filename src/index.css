@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+* {
+  font-family: Roboto, 'sans-serif';
+}
+
 html {
   box-sizing: border-box;
 }
@@ -7,4 +11,107 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+ol {
+  list-style: none;
+}
+
+ol li {
+  padding: 10px;
+}
+
+.app-bar {
+  position: fixed;
+}
+
+.shelf {
+  display: grid;
+  background-color: #f8f8ff !important;
+  margin: 10px;
+  padding: 5px;
+  overflow-x: auto;
+}
+
+.shelf-title {
+  color: #eb6185;
+  text-align: center;
+  padding: 10px;
+}
+
+.shelf-title span {
+  font-size: 26px;
+  font-weight: 600;
+  text-shadow: 1px 1px 6px rgba(155, 40, 40, 0.4);
+}
+
+.shelf-content {
+  display: flex;
+}
+
+.books-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.books-grid li {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.search-books-results {
+  padding: 80px 10px 20px;
+}
+
+.search-books-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.search-suggestion,
+.empty-shelf-message {
+  font-weight: bold;
+  height: 11em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+  color: #bdbdbd;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.empty-search-result {
+  font-weight: bold;
+  height: 7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+  color: #bdbdbd;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.empty-shelf-message {
+  width: 100%;
+  font-size: 20px;
+  height: 4em;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-books-input-wrapper {
+  width: 100%;
+}
+
+.menu-item-link {
+  color: #eb6185;
+  text-decoration: none;
+  text-shadow: 1px 1px 6px rgba(155, 40, 40, 0.2);
 }

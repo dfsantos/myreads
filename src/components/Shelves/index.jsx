@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-import Bookshelf from './Bookshelf';
-import bookshelfConfig from '../../config/bookshelf.config.json';
+import Shelf from './Shelf';
+import shelfConfig from '../../config/bookshelf.config.json';
 
 const propTypes = {
   books: PropTypes.array,
@@ -14,7 +13,7 @@ const defaultProps = {
   books: [],
 };
 
-class BookshelfPage extends Component {
+class Shelves extends Component {
   constructor(props) {
     super(props);
     this.onCategorizeBook = this.onCategorizeBook.bind(this);
@@ -29,25 +28,22 @@ class BookshelfPage extends Component {
     return (
       <div className="list-books">
         <div className="list-books-content">
-          {bookshelfConfig.map(bookshelf => (
-            <Bookshelf
-              key={bookshelf.type}
-              name={bookshelf.name}
-              category={bookshelf.type}
+          {shelfConfig.map(shelf => (
+            <Shelf
+              key={shelf.type}
+              name={shelf.name}
+              category={shelf.type}
               books={books}
               onCategorizeBook={this.onCategorizeBook}
             />
           ))}
-        </div>
-        <div className="open-search">
-          <Link to="/search">Add a book</Link>
         </div>
       </div>
     );
   }
 }
 
-BookshelfPage.propTypes = propTypes;
-BookshelfPage.defaultProps = defaultProps;
+Shelves.propTypes = propTypes;
+Shelves.defaultProps = defaultProps;
 
-export default BookshelfPage;
+export default Shelves;
