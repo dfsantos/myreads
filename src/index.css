@@ -11,6 +11,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-color: #455a64;
 }
 
 ol {
@@ -27,14 +28,14 @@ ol li {
 
 .shelf {
   display: grid;
-  background-color: #f8f8ff !important;
+  background-color: #37474f !important;
   margin: 10px;
   padding: 5px;
   overflow-x: auto;
 }
 
 .shelf-title {
-  color: #eb6185;
+  color: #ff6d00;
   text-align: center;
   padding: 10px;
 }
@@ -42,7 +43,7 @@ ol li {
 .shelf-title span {
   font-size: 26px;
   font-weight: 600;
-  text-shadow: 1px 1px 6px rgba(155, 40, 40, 0.4);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 .shelf-content {
@@ -83,8 +84,8 @@ ol li {
   justify-content: center;
   text-align: center;
   font-size: 40px;
-  color: #bdbdbd;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+  color: #eceff1;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .empty-search-result {
@@ -95,15 +96,15 @@ ol li {
   justify-content: center;
   text-align: center;
   font-size: 40px;
-  color: #bdbdbd;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+  color: #eceff1;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .empty-shelf-message {
   width: 100%;
   font-size: 20px;
   height: 4em;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .search-books-input-wrapper {
@@ -111,7 +112,23 @@ ol li {
 }
 
 .menu-item-link {
-  color: #eb6185;
   text-decoration: none;
-  text-shadow: 1px 1px 6px rgba(155, 40, 40, 0.2);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #b0bec5;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #b0bec5;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #b0bec5;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #b0bec5;
 }
