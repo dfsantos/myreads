@@ -12,7 +12,7 @@ function SearchInput({ onChange }) {
     <div className="search-books-input-wrapper">
       <Debounce time="500" handler="onChange">
         <TextField
-          name="search-input"
+          id="search-input"
           placeholder="Search by title or author"
           onChange={onChange}
           underlineShow={false}

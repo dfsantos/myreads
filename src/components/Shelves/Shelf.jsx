@@ -7,7 +7,7 @@ import Book from '../Book';
 const propTypes = {
   books: PropTypes.array,
   name: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  shelf: PropTypes.string.isRequired,
   onCategorizeBook: PropTypes.func.isRequired,
 };
 
@@ -15,10 +15,10 @@ const defaultProps = {
   books: [],
 };
 
-const byCategory = category => book => book.category === category;
+const byShelf = shelf => book => book.shelf === shelf;
 
-function Shelf({ name, category, books, onCategorizeBook }) {
-  const shelfBooks = books.filter(byCategory(category));
+function Shelf({ name, shelf, books, onCategorizeBook }) {
+  const shelfBooks = books.filter(byShelf(shelf));
   const isEmpty = shelfBooks.length === 0;
   return (
     <Paper className="shelf">
@@ -40,8 +40,8 @@ function Shelf({ name, category, books, onCategorizeBook }) {
               coverLink={book.imageLinks.thumbnail}
               authors={book.authors}
               description={book.description}
-              category={book.category}
-              onChangeBookCategory={onCategorizeBook(book)}
+              shelf={book.shelf}
+              onChangeBookShelf={onCategorizeBook(book)}
             />
           ))}
       </div>

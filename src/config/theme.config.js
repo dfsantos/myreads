@@ -1,22 +1,24 @@
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {
   blueGrey50,
   blueGrey900,
   blueGrey700,
-  orangeA700,
-  white,
+  deepOrangeA400,
   fullBlack,
 } from 'material-ui/styles/colors';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const muiTheme = getMuiTheme({
+  appBar: {
+    titleFontWeight: 600,
+  },
   palette: {
     primary1Color: blueGrey900,
-    accent1Color: orangeA700,
+    accent1Color: deepOrangeA400,
     textColor: blueGrey50,
-    alternateTextColor: orangeA700,
+    alternateTextColor: deepOrangeA400,
     canvasColor: blueGrey700,
     shadowColor: fullBlack,
-    pickerHeaderColor: orangeA700,
+    pickerHeaderColor: deepOrangeA400,
   },
 });
 

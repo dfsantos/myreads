@@ -11,15 +11,15 @@ const propTypes = {
   description: PropTypes.string,
   authors: PropTypes.arrayOf(PropTypes.string),
   coverLink: PropTypes.string.isRequired,
-  onChangeBookCategory: PropTypes.func.isRequired,
-  category: PropTypes.string,
+  onChangeBookShelf: PropTypes.func.isRequired,
+  shelf: PropTypes.string,
 };
 
 const defaultProps = {
   subtitle: '',
   description: '',
   authors: [],
-  category: 'none',
+  shelf: 'none',
 };
 
 const cardStyle = { heigth: 250, width: 210, padding: 3, margin: 10 };
@@ -28,17 +28,17 @@ const bookImageStyle = { heigth: 250, width: 203, maxWidth: 203, minWidth: 203 }
 class Book extends Component {
   constructor(props) {
     super(props);
-    this.state = { category: props.category };
-    this.onChangeBookCategory = this.onChangeBookCategory.bind(this);
+    this.state = { shelf: props.shelf };
+    this.onChangeBookShelf = this.onChangeBookShelf.bind(this);
   }
 
-  onChangeBookCategory(...args) {
-    this.setState({ category: args[2] }, this.props.onChangeBookCategory(args[2]));
+  onChangeBookShelf(...args) {
+    this.setState({ shelf: args[2] }, this.props.onChangeBookShelf(args[2]));
   }
 
   render() {
     const { title, authors, coverLink } = this.props;
-    const { category } = this.state;
+    const { shelf } = this.state;
 
     return (
       <Card style={cardStyle}>
@@ -47,7 +47,7 @@ class Book extends Component {
         </CardMedia>
         <CardText>{authors.join(', ').trim()}</CardText>
         <CardActions>
-          <DropDownMenu value={category} onChange={this.onChangeBookCategory}>
+          <DropDownMenu value={shelf} onChange={this.onChangeBookShelf}>
             <MenuItem value="none" primaryText="None" />
             <MenuItem value="currentlyReading" primaryText="Currently Reading" />
             <MenuItem value="wantToRead" primaryText="Want To Read" />

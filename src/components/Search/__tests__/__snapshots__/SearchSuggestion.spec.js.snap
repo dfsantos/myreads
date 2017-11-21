@@ -5,10 +5,8 @@ exports[`snapshot 1`] = `
   <div
     className="search-suggestion"
   >
-    Try search for 
-    <br />
-    "
-    Film
+    Try search for "
+    java
     "
   </div>
 </div>

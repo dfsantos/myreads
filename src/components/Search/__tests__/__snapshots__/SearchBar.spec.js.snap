@@ -4,13 +4,17 @@ exports[`default snapshot 1`] = `
 <div
   className="search-books-bar"
 >
-  <Link
-    className="close-search"
-    replace={false}
-    to="/"
+  <div
+    style={
+      Object {
+        "padding": 12,
+      }
+    }
   >
-    Close
-  </Link>
+    <ActionSearch
+      color="#ff6d00"
+    />
+  </div>
   <SearchInput
     onChange={[Function]}
   />

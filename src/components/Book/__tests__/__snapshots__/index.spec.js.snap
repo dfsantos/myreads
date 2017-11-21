@@ -1,65 +1,148 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`default snapshot 1`] = `
-<div
-  className="book"
+<Card
+  expandable={false}
+  expanded={null}
+  initiallyExpanded={false}
+  style={
+    Object {
+      "heigth": 250,
+      "margin": 10,
+      "padding": 3,
+      "width": 210,
+    }
+  }
 >
-  <div
-    className="book-top"
+  <CardMedia
+    style={
+      Object {
+        "heigth": 250,
+        "maxWidth": 203,
+        "minWidth": 203,
+        "width": 203,
+      }
+    }
   >
-    <div
-      className="book-cover"
+    <img
+      alt="Book's Title"
+      src=""
       style={
         Object {
-          "backgroundImage": "url()",
-          "height": 193,
-          "width": 128,
+          "heigth": 250,
+          "maxWidth": 203,
+          "minWidth": 203,
+          "width": 203,
         }
       }
     />
-    <div
-      className="book-shelf-changer"
+  </CardMedia>
+  <CardText>
+    Author of Book
+  </CardText>
+  <CardActions>
+    <DropDownMenu
+      anchorOrigin={
+        Object {
+          "horizontal": "left",
+          "vertical": "top",
+        }
+      }
+      animated={true}
+      autoWidth={true}
+      disabled={false}
+      iconButton={<NavigationArrowDropDown />}
+      maxHeight={500}
+      multiple={false}
+      onChange={[Function]}
+      openImmediately={false}
+      value="none"
     >
-      <select
-        defaultValue="none"
-        onChange={[Function]}
-      >
-        <option
-          disabled={true}
-          value="none"
-        >
-          Move to...
-        </option>
-        <option
-          value="currentlyReading"
-        >
-          Currently Reading
-        </option>
-        <option
-          value="wantToRead"
-        >
-          Want to Read
-        </option>
-        <option
-          value="read"
-        >
-          Read
-        </option>
-        <option
-          value="none"
-        >
-          None
-        </option>
-      </select>
-    </div>
-  </div>
-  <div
-    className="book-title"
-  >
-    Book's Title
-  </div>
-  <div
-    className="book-authors"
-  />
-</div>
+      <MenuItem
+        anchorOrigin={
+          Object {
+            "horizontal": "right",
+            "vertical": "top",
+          }
+        }
+        checked={false}
+        desktop={false}
+        disabled={false}
+        focusState="none"
+        insetChildren={false}
+        primaryText="None"
+        targetOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "top",
+          }
+        }
+        value="none"
+      />
+      <MenuItem
+        anchorOrigin={
+          Object {
+            "horizontal": "right",
+            "vertical": "top",
+          }
+        }
+        checked={false}
+        desktop={false}
+        disabled={false}
+        focusState="none"
+        insetChildren={false}
+        primaryText="Currently Reading"
+        targetOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "top",
+          }
+        }
+        value="currentlyReading"
+      />
+      <MenuItem
+        anchorOrigin={
+          Object {
+            "horizontal": "right",
+            "vertical": "top",
+          }
+        }
+        checked={false}
+        desktop={false}
+        disabled={false}
+        focusState="none"
+        insetChildren={false}
+        primaryText="Want To Read"
+        targetOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "top",
+          }
+        }
+        value="wantToRead"
+      />
+      <MenuItem
+        anchorOrigin={
+          Object {
+            "horizontal": "right",
+            "vertical": "top",
+          }
+        }
+        checked={false}
+        desktop={false}
+        disabled={false}
+        focusState="none"
+        insetChildren={false}
+        primaryText="Read"
+        targetOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "top",
+          }
+        }
+        value="read"
+      />
+    </DropDownMenu>
+  </CardActions>
+</Card>
 `;

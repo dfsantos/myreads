@@ -20,7 +20,7 @@ class Shelves extends Component {
   }
 
   onCategorizeBook(book) {
-    return category => this.props.onCategorizeBook(Object.assign(book, { category }));
+    return shelf => this.props.onCategorizeBook(Object.assign(book, { shelf }));
   }
 
   render() {
@@ -32,7 +32,7 @@ class Shelves extends Component {
             <Shelf
               key={shelf.type}
               name={shelf.name}
-              category={shelf.type}
+              shelf={shelf.type}
               books={books}
               onCategorizeBook={this.onCategorizeBook}
             />

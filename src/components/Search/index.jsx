@@ -31,14 +31,14 @@ class SearchPage extends Component {
     if (searchQuery.length === 0) {
       this.setState({ searchQuery, searchResult: [] });
     } else {
-      const result = await BooksAPI.search(searchQuery, 10);
+      const result = await BooksAPI.search(searchQuery, 20);
       this.setState({ searchQuery, searchResult: result.error ? [] : result });
     }
   }
 
   onCategorizeBook(book) {
-    return category => {
-      this.props.onCategorizeBook(Object.assign(book, { category }));
+    return shelf => {
+      this.props.onCategorizeBook(Object.assign(book, { shelf }));
     };
   }
 

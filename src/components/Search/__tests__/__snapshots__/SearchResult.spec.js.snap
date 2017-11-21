@@ -4,14 +4,13 @@ exports[`empty data snapshot 1`] = `
 <div
   className="search-books-results"
 >
-  <div>
+  <div
+    className="empty-search-result"
+  >
     <span>
       Your search did not match any books.
     </span>
   </div>
-  <ol
-    className="books-grid"
-  />
 </div>
 `;
 
@@ -19,27 +18,39 @@ exports[`not empty data snapshot 1`] = `
 <div
   className="search-books-results"
 >
-  <ol
-    className="books-grid"
+  <div
+    className="bookshelf-books"
   >
-    <li
-      key="1"
+    <ol
+      className="books-grid"
     >
-      <Book
-        coverLink=""
-        onChangeBookCategory={[Function]}
-        title="Book A"
-      />
-    </li>
-    <li
-      key="2"
-    >
-      <Book
-        coverLink=""
-        onChangeBookCategory={[Function]}
-        title="Book B"
-      />
-    </li>
-  </ol>
+      <li
+        key="1"
+      >
+        <Book
+          authors={Array []}
+          category="none"
+          coverLink=""
+          description=""
+          onChangeBookCategory={[Function]}
+          subtitle=""
+          title="Book A"
+        />
+      </li>
+      <li
+        key="2"
+      >
+        <Book
+          authors={Array []}
+          category="none"
+          coverLink=""
+          description=""
+          onChangeBookCategory={[Function]}
+          subtitle=""
+          title="Book B"
+        />
+      </li>
+    </ol>
+  </div>
 </div>
 `;

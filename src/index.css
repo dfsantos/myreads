@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
 * {
-  font-family: Roboto, 'sans-serif';
+  font-family: 'Amatic SC', cursive;
 }
 
 html {
@@ -26,6 +27,13 @@ ol li {
   position: fixed;
 }
 
+#root > div > div:nth-child(1) > h1 {
+  text-align: center;
+  font-size: 40px !important;
+  text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);
+  padding-right: 49px;
+}
+
 .shelf {
   display: grid;
   background-color: #37474f !important;
@@ -35,19 +43,40 @@ ol li {
 }
 
 .shelf-title {
-  color: #ff6d00;
+  color: #ff3d00;
   text-align: center;
   padding: 10px;
 }
 
 .shelf-title span {
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 600;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 1);
 }
 
 .shelf-content {
   display: flex;
+}
+
+#root > div > div.list-books > div > div > div.shelf-content > div > div > div:nth-child(2) {
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+#root
+  > div
+  > div.list-books
+  > div
+  > div
+  > div.shelf-content
+  > div
+  > div
+  > div:nth-child(3)
+  > div
+  > div:nth-child(1)
+  > div:nth-child(2) {
+  font-size: 24px !important;
+  font-weight: bold;
 }
 
 .books-grid {
@@ -72,7 +101,12 @@ ol li {
   width: 100%;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 1);
+}
+
+#search-input {
+  font-family: 'Amatic SC', cursive !important;
+  font-size: 26px !important;
 }
 
 .search-suggestion,
@@ -97,38 +131,87 @@ ol li {
   text-align: center;
   font-size: 40px;
   color: #eceff1;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 1);
 }
 
 .empty-shelf-message {
   width: 100%;
-  font-size: 20px;
+  font-size: 23px;
   height: 4em;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 1);
 }
 
 .search-books-input-wrapper {
   width: 100%;
 }
 
+#root
+  > div
+  > div.search-books
+  > div.search-books-results
+  > div
+  > ol
+  > li
+  > div
+  > div
+  > div:nth-child(2) {
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+#root
+  > div
+  > div.search-books
+  > div.search-books-results
+  > div
+  > ol
+  > li
+  > div
+  > div
+  > div:nth-child(3)
+  > div
+  > div:nth-child(1)
+  > div:nth-child(2) {
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+body > div:nth-child(5) > div > div > div > div > span > div > div {
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
 .menu-item-link {
   text-decoration: none;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.menu-item-link div {
+  font-size: 24px !important;
+  font-weight: 600;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 1);
 }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #b0bec5;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 600;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #b0bec5;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 600;
 }
 :-ms-input-placeholder {
   /* IE 10+ */
   color: #b0bec5;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 600;
 }
 :-moz-placeholder {
   /* Firefox 18- */
   color: #b0bec5;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 600;
 }

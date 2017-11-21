@@ -11,18 +11,18 @@ import * as State from '../../utils/state';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = State.load();
+    this.state = State.loadState();
     this.onCategorizeBook = this.onCategorizeBook.bind(this);
     this.handleToggleSideBar = this.handleToggleSideBar.bind(this);
   }
 
   onCategorizeBook(book) {
     this.setState(state => {
-      const books = state.books
-        .filter(it => it.id !== book.id)
-        .concat(book.category !== 'none' ? book : []);
-      return { books };
-    }, State.persist(this.state));
+      const books = state.books.filter(it => it.id !== book.id).concat(book);
+      const newState = Object.assign(state, { books });
+      State.persist(newState);
+      return newState;
+    });
   }
 
   handleToggleSideBar() {

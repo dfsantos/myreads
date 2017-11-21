@@ -9,10 +9,17 @@ exports[`default snpashot 1`] = `
     handlers={Array []}
     time="500"
   >
-    <input
+    <TextField
+      disabled={false}
+      floatingLabelFixed={false}
+      fullWidth={true}
+      multiLine={false}
+      name="search-input"
       onChange={[Function]}
       placeholder="Search by title or author"
+      rows={1}
       type="text"
+      underlineShow={false}
     />
   </Debounce>
 </div>
