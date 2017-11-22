@@ -215,3 +215,10 @@ body > div:nth-child(5) > div > div > div > div > span > div > div {
   font-family: 'Amatic SC', cursive;
   font-weight: 600;
 }
+
+.loading {
+  margin-top: 15%;
+  text-align: center;
+  padding: 10px;
+  color: #ff3d00 !important;
+}

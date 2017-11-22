@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import CircularProgress from 'material-ui/CircularProgress';
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
 import SearchSuggestion from './SearchSuggestion';
@@ -11,6 +12,12 @@ const propTypes = {
   onCategorizeBook: PropTypes.func.isRequired,
 };
 
+const CircularProgressExampleSimple = () => (
+  <div className="loading">
+    <CircularProgress size={80} thickness={5} color="#ff3d00" />
+  </div>
+);
+
 class SearchPage extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +27,7 @@ class SearchPage extends Component {
   }
 
   async onSearch(event) {
+    this.setState({ isWaitingResponse: true });
     const searchQuery = event.target.value;
     let searchResult = [];
 
@@ -28,7 +36,7 @@ class SearchPage extends Component {
       searchResult = result.error ? [] : result;
     }
 
-    this.setState({ searchQuery, searchResult });
+    this.setState({ searchQuery, searchResult, isWaitingResponse: false });
   }
 
   onCategorizeBook(book) {
@@ -36,17 +44,22 @@ class SearchPage extends Component {
   }
 
   render() {
-    const { searchQuery, searchResult } = this.state;
+    const { searchQuery, searchResult, isWaitingResponse } = this.state;
     const { onCategorizeBook, onSearch } = this;
     return (
       <div className="search-books">
         <SearchBar onSearch={onSearch} />
-        <SearchSuggestion words={words} pause={searchQuery.length > 0} />
-        <SearchResult
-          searchQuery={searchQuery}
-          books={searchResult}
-          onCategorizeBook={onCategorizeBook}
-        />
+        {isWaitingResponse && <CircularProgressExampleSimple />}
+        {!isWaitingResponse && (
+          <div>
+            <SearchSuggestion words={words} pause={searchQuery.length > 0} />
+            <SearchResult
+              searchQuery={searchQuery}
+              books={searchResult}
+              onCategorizeBook={onCategorizeBook}
+            />
+          </div>
+        )}
       </div>
     );
   }
