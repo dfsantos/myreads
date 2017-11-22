@@ -2,7 +2,7 @@ import React from 'react';
 
 import SearchSuggestion from '../SearchSuggestion';
 
-const words = ['Android', 'Film', 'Java'];
+const words = ['Android'];
 
 it('it should render without errors', () => {
   shallow(<SearchSuggestion words={words} />);

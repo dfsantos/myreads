@@ -1,18 +1,18 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 
-import Bookshelf from '../Bookshelf';
+import Shelf from '../Shelf';
 
-const BOOKSHELF_NAME = 'Bookshelf Name';
+const BOOKSHELF_NAME = 'Shelf Name';
 const BOOKSHELF_CATEGORY = 'read';
 
 const onChangeBookCategory = jest.fn(() => () => {});
 
 it('should render without erros', () => {
   shallow(
-    <Bookshelf
+    <Shelf
       name={BOOKSHELF_NAME}
-      category={BOOKSHELF_CATEGORY}
+      shelf={BOOKSHELF_CATEGORY}
       onCategorizeBook={onChangeBookCategory}
     />
   );
@@ -20,9 +20,9 @@ it('should render without erros', () => {
 
 it('snapshot without books', () => {
   const wrapper = shallow(
-    <Bookshelf
+    <Shelf
       name={BOOKSHELF_NAME}
-      category={BOOKSHELF_CATEGORY}
+      shelf={BOOKSHELF_CATEGORY}
       onCategorizeBook={onChangeBookCategory}
     />
   );
@@ -31,14 +31,14 @@ it('snapshot without books', () => {
 
 it('snapshot with books', () => {
   const books = [
-    { id: 1, title: 'Book A', category: BOOKSHELF_CATEGORY, imageLinks: { thumbnail: '' } },
-    { id: 2, title: 'Book B', category: BOOKSHELF_CATEGORY, imageLinks: { thumbnail: '' } },
+    { id: 1, title: 'Book A', shelf: BOOKSHELF_CATEGORY, imageLinks: { thumbnail: '' } },
+    { id: 2, title: 'Book B', shelf: BOOKSHELF_CATEGORY, imageLinks: { thumbnail: '' } },
   ];
   const wrapper = shallow(
-    <Bookshelf
+    <Shelf
       books={books}
       name={BOOKSHELF_NAME}
-      category={BOOKSHELF_CATEGORY}
+      shelf={BOOKSHELF_CATEGORY}
       onCategorizeBook={onChangeBookCategory}
     />
   );
@@ -49,14 +49,14 @@ it('onChangeBookCategory should be called with book as parameter', () => {
   const book = {
     id: 1,
     title: 'Book A',
-    category: BOOKSHELF_CATEGORY,
+    shelf: BOOKSHELF_CATEGORY,
     imageLinks: { thumbnail: '' },
   };
   const wrapper = shallow(
-    <Bookshelf
+    <Shelf
       books={[book]}
       name={BOOKSHELF_NAME}
-      category={BOOKSHELF_CATEGORY}
+      shelf={BOOKSHELF_CATEGORY}
       onCategorizeBook={onChangeBookCategory}
     />
   );
@@ -67,20 +67,20 @@ it('should filter book by shelf category', () => {
   const bookA = {
     id: 1,
     title: 'Book A',
-    category: BOOKSHELF_CATEGORY,
+    shelf: BOOKSHELF_CATEGORY,
     imageLinks: { thumbnail: '' },
   };
   const bookB = {
     id: 2,
     title: 'Book B',
-    category: 'wrongCategory',
+    shelf: 'wrongCategory',
     imageLinks: { thumbnail: '' },
   };
   const wrapper = shallow(
-    <Bookshelf
+    <Shelf
       books={[bookA, bookB]}
       name={BOOKSHELF_NAME}
-      category={BOOKSHELF_CATEGORY}
+      shelf={BOOKSHELF_CATEGORY}
       onCategorizeBook={onChangeBookCategory}
     />
   );

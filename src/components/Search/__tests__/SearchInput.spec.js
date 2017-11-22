@@ -11,7 +11,7 @@ it('should render without errors', () => {
 
 it('should call onChangeListener when value change', () => {
   const wrapper = shallow(<SearchInput onChange={onChangeListener} />);
-  const input = wrapper.find('input');
+  const input = wrapper.find('TextField');
   const event = { target: { value: 'android' } };
 
   input.simulate('change', event);

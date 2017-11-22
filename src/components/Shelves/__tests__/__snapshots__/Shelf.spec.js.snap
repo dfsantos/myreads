@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot with books 1`] = `
+<Paper
+  circle={false}
+  className="shelf"
+  rounded={true}
+  transitionEnabled={true}
+  zDepth={1}
+>
+  <div
+    className="shelf-title"
+  >
+    <span>
+      Shelf Name
+    </span>
+  </div>
+  <div
+    className="shelf-content"
+  >
+    <Book
+      authors={Array []}
+      coverLink=""
+      description=""
+      key="1"
+      onChangeBookShelf={[Function]}
+      shelf="read"
+      subtitle=""
+      title="Book A"
+    />
+    <Book
+      authors={Array []}
+      coverLink=""
+      description=""
+      key="2"
+      onChangeBookShelf={[Function]}
+      shelf="read"
+      subtitle=""
+      title="Book B"
+    />
+  </div>
+</Paper>
+`;
+
+exports[`snapshot without books 1`] = `
+<Paper
+  circle={false}
+  className="shelf"
+  rounded={true}
+  transitionEnabled={true}
+  zDepth={1}
+>
+  <div
+    className="shelf-title"
+  >
+    <span>
+      Shelf Name
+    </span>
+  </div>
+  <div
+    className="shelf-content"
+  >
+    <div
+      className="empty-shelf-message"
+    >
+      <span>
+        This shelf is empty.
+      </span>
+    </div>
+  </div>
+</Paper>
+`;

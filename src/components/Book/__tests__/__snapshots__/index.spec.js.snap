@@ -14,16 +14,7 @@ exports[`default snapshot 1`] = `
     }
   }
 >
-  <CardMedia
-    style={
-      Object {
-        "heigth": 250,
-        "maxWidth": 203,
-        "minWidth": 203,
-        "width": 203,
-      }
-    }
-  >
+  <CardMedia>
     <img
       alt="Book's Title"
       src=""

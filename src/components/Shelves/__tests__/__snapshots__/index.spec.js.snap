@@ -7,37 +7,27 @@ exports[`snapshot without books 1`] = `
   <div
     className="list-books-content"
   >
-    <Bookshelf
+    <Shelf
       books={Array []}
-      category="currentlyReading"
       key="currentlyReading"
       name="Currently Reading"
       onCategorizeBook={[Function]}
+      shelf="currentlyReading"
     />
-    <Bookshelf
+    <Shelf
       books={Array []}
-      category="read"
       key="read"
       name="Read"
       onCategorizeBook={[Function]}
+      shelf="read"
     />
-    <Bookshelf
+    <Shelf
       books={Array []}
-      category="wantToRead"
       key="wantToRead"
       name="Want to Read"
       onCategorizeBook={[Function]}
+      shelf="wantToRead"
     />
-  </div>
-  <div
-    className="open-search"
-  >
-    <Link
-      replace={false}
-      to="/search"
-    >
-      Add a book
-    </Link>
   </div>
 </div>
 `;

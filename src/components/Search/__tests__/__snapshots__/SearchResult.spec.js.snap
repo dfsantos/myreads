@@ -29,10 +29,10 @@ exports[`not empty data snapshot 1`] = `
       >
         <Book
           authors={Array []}
-          category="none"
           coverLink=""
           description=""
-          onChangeBookCategory={[Function]}
+          onChangeBookShelf={[Function]}
+          shelf="none"
           subtitle=""
           title="Book A"
         />
@@ -42,10 +42,10 @@ exports[`not empty data snapshot 1`] = `
       >
         <Book
           authors={Array []}
-          category="none"
           coverLink=""
           description=""
-          onChangeBookCategory={[Function]}
+          onChangeBookShelf={[Function]}
+          shelf="none"
           subtitle=""
           title="Book B"
         />
