@@ -148,6 +148,7 @@ ol li {
 #root
   > div
   > div.search-books
+  > div
   > div.search-books-results
   > div
   > ol
@@ -162,6 +163,7 @@ ol li {
 #root
   > div
   > div.search-books
+  > div
   > div.search-books-results
   > div
   > ol
