@@ -1,7 +1,8 @@
 {
   "name": "myreads",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://dfsantos.github.io/myreads/",
   "dependencies": {
     "material-ui": "^0.19.4",
     "prop-types": "^15.6.0",
