@@ -9,15 +9,15 @@ const persistOffline = state => localStorage.setItem('state', JSON.stringify(sta
 
 const loadOfflineData = () => JSON.parse(localStorage.getItem('state')) || initialState;
 
-const loadState = () => {
+const load = () => {
   const localData = loadOfflineData();
-  BooksAPI.getAll().then(cloudBooks => {
-    persistOffline(Object.assign(localData, { books: cloudBooks }));
-  });
+  //const books = await BooksAPI.getAll();
+  //persistOffline(Object.assign(localData, { books }));
   return localData;
 };
 
 const persist = state => {
+  let persistedState = Object.assign(state);
   persistOffline(state);
   try {
     const promises = state.books.map(book => BooksAPI.update(book, book.shelf));
@@ -28,6 +28,16 @@ const persist = state => {
   } catch (e) {
     console.log(e);
   }
+  return persistedState;
 };
 
-export { persist, persistOffline, loadState };
+const categorizeBook = (state, book, shelf) => {
+  const books = state.books.filter(it => it.id !== book.id).concat(Object.assign(book, { shelf }));
+  return persist(Object.assign(state, { books }));
+};
+
+const searchBooks = searchQuery => BooksAPI.search(searchQuery, 20);
+
+const toogleSideBar = state => ({ isSideBarOpen: !state.isSideBarOpen });
+
+export { load, categorizeBook, searchBooks, toogleSideBar };

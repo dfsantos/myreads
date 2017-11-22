@@ -32,18 +32,21 @@ function Shelf({ name, shelf, books, onCategorizeBook }) {
           </div>
         )}
         {!isEmpty &&
-          shelfBooks.map(book => (
-            <Book
-              key={book.id}
-              title={book.title}
-              subtitle={book.subtitle}
-              coverLink={book.imageLinks.thumbnail}
-              authors={book.authors}
-              description={book.description}
-              shelf={book.shelf}
-              onChangeBookShelf={onCategorizeBook(book)}
-            />
-          ))}
+          shelfBooks.map(book => {
+            const { thumbnail } = book.imageLinks || { thumbnail: '' };
+            return (
+              <Book
+                key={book.id}
+                title={book.title}
+                subtitle={book.subtitle}
+                coverLink={thumbnail}
+                authors={book.authors}
+                description={book.description}
+                shelf={book.shelf}
+                onChangeBookShelf={onCategorizeBook(book)}
+              />
+            );
+          })}
       </div>
     </Paper>
   );

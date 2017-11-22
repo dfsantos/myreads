@@ -22,8 +22,12 @@ const defaultProps = {
   shelf: 'none',
 };
 
-const cardStyle = { heigth: 250, width: 210, padding: 3, margin: 10 };
-const bookImageStyle = { heigth: 250, width: 203, maxWidth: 203, minWidth: 203 };
+const SELECTED_VALUE = 2;
+
+const style = {
+  bookCard: { heigth: 250, width: 210, padding: 3, margin: 10 },
+  bookCover: { heigth: 250, width: 203, maxWidth: 203, minWidth: 203 },
+};
 
 class Book extends Component {
   constructor(props) {
@@ -33,7 +37,10 @@ class Book extends Component {
   }
 
   onChangeBookShelf(...args) {
-    this.setState({ shelf: args[2] }, this.props.onChangeBookShelf(args[2]));
+    this.setState(
+      { shelf: args[SELECTED_VALUE] },
+      this.props.onChangeBookShelf(args[SELECTED_VALUE])
+    );
   }
 
   render() {
@@ -41,9 +48,9 @@ class Book extends Component {
     const { shelf } = this.state;
 
     return (
-      <Card style={cardStyle}>
-        <CardMedia style={bookImageStyle}>
-          <img src={coverLink} alt={title} style={bookImageStyle} />
+      <Card style={style.bookCard}>
+        <CardMedia>
+          <img src={coverLink} alt={title} style={style.bookCover} />
         </CardMedia>
         <CardText>{authors.join(', ').trim()}</CardText>
         <CardActions>

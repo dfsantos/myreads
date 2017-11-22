@@ -6,30 +6,24 @@ import SideBar from '../SideBar';
 import Shelves from '../Shelves';
 import Search from '../Search';
 
-import * as State from '../../utils/state';
-
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = State.loadState();
+    this.state = props.state.load();
     this.onCategorizeBook = this.onCategorizeBook.bind(this);
     this.handleToggleSideBar = this.handleToggleSideBar.bind(this);
   }
 
-  onCategorizeBook(book) {
-    this.setState(state => {
-      const books = state.books.filter(it => it.id !== book.id).concat(book);
-      const newState = Object.assign(state, { books });
-      State.persist(newState);
-      return newState;
-    });
+  onCategorizeBook(book, shelf) {
+    this.setState((state, props) => props.state.categorizeBook(state, book, shelf));
   }
 
   handleToggleSideBar() {
-    this.setState(state => ({ isSideBarOpen: !state.isSideBarOpen }));
+    this.setState((state, props) => props.state.toogleSideBar(state));
   }
 
   render() {
+    const { searchBooks } = this.props.state;
     const { books, isSideBarOpen } = this.state;
     return (
       <div className="App">
@@ -40,7 +34,10 @@ class App extends Component {
           path="/"
           render={() => <Shelves books={books} onCategorizeBook={this.onCategorizeBook} />}
         />
-        <Route path="/search" render={() => <Search onCategorizeBook={this.onCategorizeBook} />} />
+        <Route
+          path="/search"
+          render={() => <Search onCategorizeBook={this.onCategorizeBook} onSearch={searchBooks} />}
+        />
       </div>
     );
   }

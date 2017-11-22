@@ -19,6 +19,15 @@ class SearchSuggestion extends Component {
     this.stop = setInterval(this.suggestWord, 2500);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.pause && this.stop === null) {
+      this.stop = setInterval(this.suggestWord, 2500);
+    } else {
+      clearInterval(this.stop);
+      this.stop = null;
+    }
+  }
+
   componentWillUnmount() {
     clearInterval(this.stop);
   }
@@ -32,12 +41,12 @@ class SearchSuggestion extends Component {
   }
 
   render() {
+    const { pause } = this.props;
+    const { words } = this.state;
     return (
       <div>
-        {!this.props.pause && (
-          <div className="search-suggestion">
-            Try search for "{this.state.words[0].toLowerCase()}"
-          </div>
+        {!pause && (
+          <div className="search-suggestion">Try search for "{words[0].toLowerCase()}"</div>
         )}
       </div>
     );

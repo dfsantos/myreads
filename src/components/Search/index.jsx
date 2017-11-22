@@ -5,8 +5,6 @@ import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
 import SearchSuggestion from './SearchSuggestion';
 
-import * as BooksAPI from '../../api/BooksAPI';
-
 import words from '../../config/suggestion.config.json';
 
 const propTypes = {
@@ -16,30 +14,25 @@ const propTypes = {
 class SearchPage extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      searchQuery: '',
-      searchResult: [],
-    };
-
+    this.state = { searchQuery: '', searchResult: [] };
     this.onSearch = this.onSearch.bind(this);
     this.onCategorizeBook = this.onCategorizeBook.bind(this);
   }
 
   async onSearch(event) {
     const searchQuery = event.target.value;
-    if (searchQuery.length === 0) {
-      this.setState({ searchQuery, searchResult: [] });
-    } else {
-      const result = await BooksAPI.search(searchQuery, 20);
-      this.setState({ searchQuery, searchResult: result.error ? [] : result });
+    let searchResult = [];
+
+    if (searchQuery.length > 0) {
+      const result = await this.props.onSearch(searchQuery);
+      searchResult = result.error ? [] : result;
     }
+
+    this.setState({ searchQuery, searchResult });
   }
 
   onCategorizeBook(book) {
-    return shelf => {
-      this.props.onCategorizeBook(Object.assign(book, { shelf }));
-    };
+    return shelf => this.props.onCategorizeBook(book, shelf);
   }
 
   render() {

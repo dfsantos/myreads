@@ -7,8 +7,12 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 
 const propTypes = {
-  open: PropTypes.bool.isRequired,
+  open: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
+};
+
+const defaultProps = {
+  open: false,
 };
 
 function SideBar({ open, onClose }) {
@@ -29,5 +33,6 @@ function SideBar({ open, onClose }) {
 }
 
 SideBar.propTypes = propTypes;
+SideBar.defaultProps = defaultProps;
 
 export default SideBar;

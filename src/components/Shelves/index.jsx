@@ -20,7 +20,7 @@ class Shelves extends Component {
   }
 
   onCategorizeBook(book) {
-    return shelf => this.props.onCategorizeBook(Object.assign(book, { shelf }));
+    return shelf => this.props.onCategorizeBook(book, shelf);
   }
 
   render() {
