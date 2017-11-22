@@ -30,8 +30,7 @@ class App extends Component {
         <AppBar title="BookFlix" onLeftIconButtonTouchTap={this.handleToggleSideBar} />
         <SideBar open={isSideBarOpen} onClose={this.handleToggleSideBar} />
         <Route
-          exact
-          path="/"
+          path="/shelves"
           render={() => <Shelves books={books} onCategorizeBook={this.onCategorizeBook} />}
         />
         <Route

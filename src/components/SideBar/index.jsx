@@ -19,7 +19,7 @@ function SideBar({ open, onClose }) {
   return (
     <Drawer docked={false} open={open} onRequestChange={onClose}>
       <AppBar title="BookFlix" onLeftIconButtonTouchTap={onClose} />
-      <Link className="menu-item-link" to="/">
+      <Link className="menu-item-link" to="/shelves">
         <MenuItem>My Shelves</MenuItem>
       </Link>
       <Link className="menu-item-link" to="/search">
