@@ -23,21 +23,18 @@ function SearchResult({ searchQuery, books, onCategorizeBook }) {
         </div>
       )}
       {!emptyResult && (
-        <div className="bookshelf-books">
-          <ol className="books-grid">
-            {books.map(book => (
-              <li key={book.id}>
-                <Book
-                  title={book.title}
-                  subtitle={book.subtitle}
-                  coverLink={book.imageLinks.thumbnail}
-                  authors={book.authors}
-                  description={book.description}
-                  onChangeBookShelf={onCategorizeBook(book)}
-                />
-              </li>
-            ))}
-          </ol>
+        <div className="books-grid">
+          {books.map(book => (
+            <Book
+              key={book.id}
+              title={book.title}
+              subtitle={book.subtitle}
+              coverLink={book.imageLinks.thumbnail}
+              authors={book.authors}
+              description={book.description}
+              onChangeBookShelf={onCategorizeBook(book)}
+            />
+          ))}
         </div>
       )}
     </div>

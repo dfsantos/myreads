@@ -19,38 +19,28 @@ exports[`not empty data snapshot 1`] = `
   className="search-books-results"
 >
   <div
-    className="bookshelf-books"
+    className="books-grid"
   >
-    <ol
-      className="books-grid"
-    >
-      <li
-        key="1"
-      >
-        <Book
-          authors={Array []}
-          coverLink=""
-          description=""
-          onChangeBookShelf={[Function]}
-          shelf="none"
-          subtitle=""
-          title="Book A"
-        />
-      </li>
-      <li
-        key="2"
-      >
-        <Book
-          authors={Array []}
-          coverLink=""
-          description=""
-          onChangeBookShelf={[Function]}
-          shelf="none"
-          subtitle=""
-          title="Book B"
-        />
-      </li>
-    </ol>
+    <Book
+      authors={Array []}
+      coverLink=""
+      description=""
+      key="1"
+      onChangeBookShelf={[Function]}
+      shelf="none"
+      subtitle=""
+      title="Book A"
+    />
+    <Book
+      authors={Array []}
+      coverLink=""
+      description=""
+      key="2"
+      onChangeBookShelf={[Function]}
+      shelf="none"
+      subtitle=""
+      title="Book B"
+    />
   </div>
 </div>
 `;

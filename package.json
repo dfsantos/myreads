@@ -37,7 +37,8 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!<rootDir>/node_modules/",
-      "!src/BooksAPI.js",
+      "!src/**/BooksAPI.js",
+      "!src/**/config/*.js",
       "!src/polyfills.js",
       "!src/setupTests.js",
       "!src/index.js"

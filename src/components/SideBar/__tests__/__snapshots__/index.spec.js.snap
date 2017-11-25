@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot of SideBar closed 1`] = `
+<Drawer
+  disableSwipeToOpen={false}
+  docked={false}
+  onRequestChange={[Function]}
+  open={false}
+  openSecondary={false}
+  swipeAreaWidth={30}
+  width={null}
+  zDepth={2}
+>
+  <AppBar
+    onLeftIconButtonTouchTap={[Function]}
+    showMenuIconButton={true}
+    title="BookFlix"
+    zDepth={1}
+  />
+  <Link
+    className="menu-item-link"
+    replace={false}
+    to="/"
+  >
+    <MenuItem
+      anchorOrigin={
+        Object {
+          "horizontal": "right",
+          "vertical": "top",
+        }
+      }
+      checked={false}
+      desktop={false}
+      disabled={false}
+      focusState="none"
+      insetChildren={false}
+      targetOrigin={
+        Object {
+          "horizontal": "left",
+          "vertical": "top",
+        }
+      }
+    >
+      My Shelves
+    </MenuItem>
+  </Link>
+  <Link
+    className="menu-item-link"
+    replace={false}
+    to="/search"
+  >
+    <MenuItem
+      anchorOrigin={
+        Object {
+          "horizontal": "right",
+          "vertical": "top",
+        }
+      }
+      checked={false}
+      desktop={false}
+      disabled={false}
+      focusState="none"
+      insetChildren={false}
+      targetOrigin={
+        Object {
+          "horizontal": "left",
+          "vertical": "top",
+        }
+      }
+    >
+      Search
+    </MenuItem>
+  </Link>
+</Drawer>
+`;
+
+exports[`snapshot of SideBar opened 1`] = `
+<Drawer
+  disableSwipeToOpen={false}
+  docked={false}
+  onRequestChange={[Function]}
+  open={true}
+  openSecondary={false}
+  swipeAreaWidth={30}
+  width={null}
+  zDepth={2}
+>
+  <AppBar
+    onLeftIconButtonTouchTap={[Function]}
+    showMenuIconButton={true}
+    title="BookFlix"
+    zDepth={1}
+  />
+  <Link
+    className="menu-item-link"
+    replace={false}
+    to="/"
+  >
+    <MenuItem
+      anchorOrigin={
+        Object {
+          "horizontal": "right",
+          "vertical": "top",
+        }
+      }
+      checked={false}
+      desktop={false}
+      disabled={false}
+      focusState="none"
+      insetChildren={false}
+      targetOrigin={
+        Object {
+          "horizontal": "left",
+          "vertical": "top",
+        }
+      }
+    >
+      My Shelves
+    </MenuItem>
+  </Link>
+  <Link
+    className="menu-item-link"
+    replace={false}
+    to="/search"
+  >
+    <MenuItem
+      anchorOrigin={
+        Object {
+          "horizontal": "right",
+          "vertical": "top",
+        }
+      }
+      checked={false}
+      desktop={false}
+      disabled={false}
+      focusState="none"
+      insetChildren={false}
+      targetOrigin={
+        Object {
+          "horizontal": "left",
+          "vertical": "top",
+        }
+      }
+    >
+      Search
+    </MenuItem>
+  </Link>
+</Drawer>
+`;

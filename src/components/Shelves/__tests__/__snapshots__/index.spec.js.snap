@@ -1,5 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`snapshot with books 1`] = `
+<div
+  className="list-books"
+>
+  <div
+    className="list-books-content"
+  >
+    <Shelf
+      books={
+        Array [
+          Object {
+            "title": "Book A",
+          },
+          Object {
+            "title": "Book B",
+          },
+        ]
+      }
+      key="currentlyReading"
+      name="Currently Reading"
+      onCategorizeBook={[Function]}
+      shelf="currentlyReading"
+    />
+    <Shelf
+      books={
+        Array [
+          Object {
+            "title": "Book A",
+          },
+          Object {
+            "title": "Book B",
+          },
+        ]
+      }
+      key="read"
+      name="Read"
+      onCategorizeBook={[Function]}
+      shelf="read"
+    />
+    <Shelf
+      books={
+        Array [
+          Object {
+            "title": "Book A",
+          },
+          Object {
+            "title": "Book B",
+          },
+        ]
+      }
+      key="wantToRead"
+      name="Want to Read"
+      onCategorizeBook={[Function]}
+      shelf="wantToRead"
+    />
+  </div>
+</div>
+`;
+
 exports[`snapshot without books 1`] = `
 <div
   className="list-books"
@@ -8,21 +67,48 @@ exports[`snapshot without books 1`] = `
     className="list-books-content"
   >
     <Shelf
-      books={Array []}
+      books={
+        Array [
+          Object {
+            "title": "Book A",
+          },
+          Object {
+            "title": "Book B",
+          },
+        ]
+      }
       key="currentlyReading"
       name="Currently Reading"
       onCategorizeBook={[Function]}
       shelf="currentlyReading"
     />
     <Shelf
-      books={Array []}
+      books={
+        Array [
+          Object {
+            "title": "Book A",
+          },
+          Object {
+            "title": "Book B",
+          },
+        ]
+      }
       key="read"
       name="Read"
       onCategorizeBook={[Function]}
       shelf="read"
     />
     <Shelf
-      books={Array []}
+      books={
+        Array [
+          Object {
+            "title": "Book A",
+          },
+          Object {
+            "title": "Book B",
+          },
+        ]
+      }
       key="wantToRead"
       name="Want to Read"
       onCategorizeBook={[Function]}

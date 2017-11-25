@@ -6,53 +6,40 @@ import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
 import SearchSuggestion from './SearchSuggestion';
 
-import words from '../../config/suggestion.config.json';
-
 const propTypes = {
   onCategorizeBook: PropTypes.func.isRequired,
+  onSearchBooks: PropTypes.func.isRequired,
+  searchSuggestions: PropTypes.arrayOf(PropTypes.string),
 };
 
-const CircularProgressExampleSimple = () => (
-  <div className="loading">
-    <CircularProgress size={80} thickness={5} color="#ff3d00" />
-  </div>
-);
-
-class SearchPage extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { searchQuery: '', searchResult: [] };
+    this.state = { searchQuery: '', searchResult: [], isWaitingResponse: false };
     this.onSearch = this.onSearch.bind(this);
-    this.onCategorizeBook = this.onCategorizeBook.bind(this);
   }
 
   async onSearch(event) {
     this.setState({ isWaitingResponse: true });
     const searchQuery = event.target.value;
-    let searchResult = [];
-
-    if (searchQuery.length > 0) {
-      const result = await this.props.onSearch(searchQuery);
-      searchResult = result.error ? [] : result;
-    }
-
+    const searchResult = await this.props.onSearchBooks(searchQuery);
     this.setState({ searchQuery, searchResult, isWaitingResponse: false });
-  }
-
-  onCategorizeBook(book) {
-    return shelf => this.props.onCategorizeBook(book, shelf);
   }
 
   render() {
     const { searchQuery, searchResult, isWaitingResponse } = this.state;
-    const { onCategorizeBook, onSearch } = this;
+    const { searchSuggestions, onCategorizeBook } = this.props;
     return (
       <div className="search-books">
-        <SearchBar onSearch={onSearch} />
-        {isWaitingResponse && <CircularProgressExampleSimple />}
+        <SearchBar onSearch={this.onSearch} />
+        {isWaitingResponse && (
+          <div className="loading">
+            <CircularProgress size={80} thickness={5} color="#ff3d00" />
+          </div>
+        )}
         {!isWaitingResponse && (
           <div>
-            <SearchSuggestion words={words} pause={searchQuery.length > 0} />
+            <SearchSuggestion words={searchSuggestions} pause={searchQuery.length > 0} />
             <SearchResult
               searchQuery={searchQuery}
               books={searchResult}
@@ -65,6 +52,6 @@ class SearchPage extends Component {
   }
 }
 
-SearchPage.propTypes = propTypes;
+Search.propTypes = propTypes;
 
-export default SearchPage;
+export default Search;

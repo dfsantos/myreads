@@ -7,12 +7,10 @@ import App from './components/App';
 import muiTheme from './config/theme.config';
 import './index.css';
 
-import * as state from './utils/state';
-
 ReactDOM.render(
   <BrowserRouter>
     <MuiThemeProvider muiTheme={muiTheme}>
-      <App state={state} />
+      <App />
     </MuiThemeProvider>
   </BrowserRouter>,
   document.getElementById('root')

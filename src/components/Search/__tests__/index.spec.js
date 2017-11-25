@@ -15,7 +15,7 @@ it('should render without errors', () => {
 
 it('default snapshot', () => {
   const wrapper = shallow(
-    <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+    <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
   );
   expect(toJson(wrapper)).toMatchSnapshot();
 });
@@ -25,7 +25,7 @@ describe('when user type a search text', () => {
   it('onSearch method should call BooksAPI.search with search query', () => {
     const SEARCH_QUERY = 'android';
     const wrapper = shallow(
-      <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+      <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
     );
     const event = { target: { value: SEARCH_QUERY } };
 
@@ -38,7 +38,7 @@ describe('when user type a search text', () => {
     it('state.searchQuery should be an empty string', () => {
       const SEARCH_QUERY = 'android';
       const wrapper = shallow(
-        <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+        <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
       );
       const event = { target: { value: SEARCH_QUERY } };
 
@@ -49,7 +49,7 @@ describe('when user type a search text', () => {
     });
     it('state.searchResult should be an empty array', () => {
       const wrapper = shallow(
-        <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+        <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
       );
       const SEARCH_QUERY = 'android';
       const event = { target: { value: SEARCH_QUERY } };
@@ -65,7 +65,7 @@ describe('when user type a search text', () => {
     it('state.searchQuery should be an empty string', () => {
       const SEARCH_QUERY = 'anytext';
       const wrapper = shallow(
-        <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+        <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
       );
       const event = { target: { value: SEARCH_QUERY } };
 
@@ -76,7 +76,7 @@ describe('when user type a search text', () => {
     });
     it('state.searchResult should be an empty array', () => {
       const wrapper = shallow(
-        <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+        <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
       );
       const SEARCH_QUERY = 'anytext';
       const event = { target: { value: SEARCH_QUERY } };
@@ -94,7 +94,7 @@ describe('when search text is empty', () => {
     BooksAPI.search = jest.fn();
     const SEARCH_QUERY = '';
     const wrapper = shallow(
-      <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+      <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
     );
     const event = { target: { value: SEARCH_QUERY } };
 
@@ -105,7 +105,7 @@ describe('when search text is empty', () => {
   it('state.searchQuery should be an empty string', () => {
     const SEARCH_QUERY = '';
     const wrapper = shallow(
-      <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+      <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
     );
     const event = { target: { value: SEARCH_QUERY } };
 
@@ -117,7 +117,7 @@ describe('when search text is empty', () => {
   it('state.searchResult should be an empty array', () => {
     const SEARCH_QUERY = '';
     const wrapper = shallow(
-      <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+      <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
     );
     const event = { target: { value: SEARCH_QUERY } };
 
@@ -131,7 +131,7 @@ describe('when search text is empty', () => {
 it('onCategorizeBook method should a function to be used for categorize book', () => {
   const book = {};
   const wrapper = shallow(
-    <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+    <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
   );
   expect(wrapper.instance().onCategorizeBook(book)).toBeInstanceOf(Function);
 });
@@ -139,7 +139,7 @@ it('onCategorizeBook method should a function to be used for categorize book', (
 it('', () => {
   const book = {};
   const wrapper = shallow(
-    <SearchPage onCategorizeBook={onCategorizeBookListener} onSearch={onSearchListener} />
+    <SearchPage onCategorizeBook={onCategorizeBookListener} onSearchBooks={onSearchListener} />
   );
   wrapper.instance().onCategorizeBook(book)('read');
   expect(onCategorizeBookListener).toHaveBeenCalled();

@@ -12,6 +12,8 @@ global.shallow = shallow;
 global.render = render;
 global.mount = mount;
 global.toJson = toJson;
+global.clearInterval = jest.fn();
+global.setInterval = jest.fn(() => 1);
 global.localStorage = {
   getItem: jest.fn(),
   setItem: jest.fn(),

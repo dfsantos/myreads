@@ -15,18 +15,22 @@ exports[`default snapshot 1`] = `
   }
 >
   <CardMedia>
-    <img
-      alt="Book's Title"
-      src=""
-      style={
-        Object {
-          "heigth": 250,
-          "maxWidth": 203,
-          "minWidth": 203,
-          "width": 203,
+    <div
+      className="cover-wrapper"
+    >
+      <img
+        alt="Book's Title"
+        src=""
+        style={
+          Object {
+            "heigth": 250,
+            "maxWidth": 203,
+            "minWidth": 203,
+            "width": 203,
+          }
         }
-      }
-    />
+      />
+    </div>
   </CardMedia>
   <CardText>
     Author of Book

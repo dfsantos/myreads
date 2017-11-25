@@ -1,28 +1,41 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 
-import BookshelfPage from '../index';
+import Shelves from '../index';
+
+import configuration from '../../../config/shelf.config.json';
 
 const onCategorizeBookListener = jest.fn(() => () => {});
+const books = [{ title: 'Book A' }, { title: 'Book B' }];
 
 it('should render without errors', () => {
-  shallow(<BookshelfPage onCategorizeBook={onCategorizeBookListener} />);
+  shallow(
+    <Shelves
+      books={books}
+      configuration={configuration}
+      onCategorizeBook={onCategorizeBookListener}
+    />
+  );
 });
 
 it('snapshot without books', () => {
-  const wrapper = shallow(<BookshelfPage onCategorizeBook={onCategorizeBookListener} />);
+  const wrapper = shallow(
+    <Shelves
+      books={books}
+      configuration={configuration}
+      onCategorizeBook={onCategorizeBookListener}
+    />
+  );
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 
-it('onCategorizeBook method should a function to be used for categorize book', () => {
-  const book = {};
-  const wrapper = shallow(<BookshelfPage onCategorizeBook={onCategorizeBookListener} />);
-  expect(wrapper.instance().onCategorizeBook(book)).toBeInstanceOf(Function);
-});
-
-it('', () => {
-  const book = {};
-  const wrapper = shallow(<BookshelfPage onCategorizeBook={onCategorizeBookListener} />);
-  wrapper.instance().onCategorizeBook(book)('read');
-  expect(onCategorizeBookListener).toHaveBeenCalled();
+it('snapshot with books', () => {
+  const wrapper = shallow(
+    <Shelves
+      books={books}
+      configuration={configuration}
+      onCategorizeBook={onCategorizeBookListener}
+    />
+  );
+  expect(toJson(wrapper)).toMatchSnapshot();
 });

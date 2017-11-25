@@ -50,7 +50,9 @@ class Book extends Component {
     return (
       <Card style={style.bookCard}>
         <CardMedia>
-          <img src={coverLink} alt={title} style={style.bookCover} />
+          <div className="cover-wrapper">
+            <img src={coverLink} alt={title} style={style.bookCover} />
+          </div>
         </CardMedia>
         <CardText>{authors.join(', ').trim()}</CardText>
         <CardActions>

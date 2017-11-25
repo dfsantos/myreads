@@ -1,46 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Shelf from './Shelf';
-import shelfConfig from '../../config/bookshelf.config.json';
 
 const propTypes = {
   books: PropTypes.array,
   onCategorizeBook: PropTypes.func.isRequired,
+  configuration: PropTypes.array.isRequired,
 };
 
 const defaultProps = {
   books: [],
 };
 
-class Shelves extends Component {
-  constructor(props) {
-    super(props);
-    this.onCategorizeBook = this.onCategorizeBook.bind(this);
-  }
-
-  onCategorizeBook(book) {
-    return shelf => this.props.onCategorizeBook(book, shelf);
-  }
-
-  render() {
-    const { books } = this.props;
-    return (
-      <div className="list-books">
-        <div className="list-books-content">
-          {shelfConfig.map(shelf => (
-            <Shelf
-              key={shelf.type}
-              name={shelf.name}
-              shelf={shelf.type}
-              books={books}
-              onCategorizeBook={this.onCategorizeBook}
-            />
-          ))}
-        </div>
+function Shelves({ books, configuration, onCategorizeBook }) {
+  return (
+    <div className="list-books">
+      <div className="list-books-content">
+        {configuration.map(shelf => (
+          <Shelf
+            key={shelf.type}
+            name={shelf.name}
+            shelf={shelf.type}
+            books={books}
+            onCategorizeBook={onCategorizeBook}
+          />
+        ))}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 Shelves.propTypes = propTypes;
