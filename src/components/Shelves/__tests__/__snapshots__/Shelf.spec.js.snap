@@ -21,21 +21,17 @@ exports[`snapshot with books 1`] = `
     <Book
       authors={Array []}
       coverLink=""
-      description=""
       key="1"
       onChangeBookShelf={[Function]}
       shelf="read"
-      subtitle=""
       title="Book A"
     />
     <Book
       authors={Array []}
       coverLink=""
-      description=""
       key="2"
       onChangeBookShelf={[Function]}
       shelf="read"
-      subtitle=""
       title="Book B"
     />
   </div>

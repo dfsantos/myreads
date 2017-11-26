@@ -24,21 +24,17 @@ exports[`not empty data snapshot 1`] = `
     <Book
       authors={Array []}
       coverLink=""
-      description=""
       key="1"
       onChangeBookShelf={[Function]}
       shelf="none"
-      subtitle=""
       title="Book A"
     />
     <Book
       authors={Array []}
       coverLink=""
-      description=""
       key="2"
       onChangeBookShelf={[Function]}
       shelf="none"
-      subtitle=""
       title="Book B"
     />
   </div>

@@ -32,6 +32,13 @@ it('default snapshot', () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 
+it('snapshot without author', () => {
+  const wrapper = shallow(
+    <Book title={TITLE} coverLink="" authors={[]} onChangeBookShelf={onChangeBookShelfListener} />
+  );
+  expect(toJson(wrapper)).toMatchSnapshot();
+});
+
 it('on select change should call onChangeBookShelfListener with selected value', () => {
   const SELECTED_VALUE = 'read';
   const event = [null, null, SELECTED_VALUE];

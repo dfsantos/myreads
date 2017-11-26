@@ -7,8 +7,6 @@ import MenuItem from 'material-ui/MenuItem';
 
 const propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
-  description: PropTypes.string,
   authors: PropTypes.arrayOf(PropTypes.string),
   coverLink: PropTypes.string.isRequired,
   onChangeBookShelf: PropTypes.func.isRequired,
@@ -16,8 +14,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  subtitle: '',
-  description: '',
   authors: [],
   shelf: 'none',
 };
@@ -32,18 +28,23 @@ const style = {
 class Book extends Component {
   constructor(props) {
     super(props);
-    this.state = { shelf: props.shelf };
+    this.state = { shelf: props.shelf, isWaitingResponse: false };
     this.onChangeBookShelf = this.onChangeBookShelf.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ shelf: nextProps.shelf, isWaitingResponse: false });
+  }
+
   onChangeBookShelf(...args) {
-    this.setState({ shelf: args[SELECTED_VALUE] });
+    this.setState({ isWaitingResponse: true });
     this.props.onChangeBookShelf(args[SELECTED_VALUE]);
   }
 
   render() {
     const { title, authors, coverLink } = this.props;
-    const { shelf } = this.state;
+    const { shelf, isWaitingResponse } = this.state;
+    const authorInfo = !authors.length ? 'Unknown Author' : authors.join(', ').trim();
 
     return (
       <Card style={style.bookCard}>
@@ -52,14 +53,17 @@ class Book extends Component {
             <img src={coverLink} alt={title} style={style.bookCover} />
           </div>
         </CardMedia>
-        <CardText>{authors.join(', ').trim()}</CardText>
+        <CardText>{authorInfo}</CardText>
         <CardActions>
-          <DropDownMenu value={shelf} onChange={this.onChangeBookShelf}>
-            <MenuItem value="none" primaryText="None" />
-            <MenuItem value="currentlyReading" primaryText="Currently Reading" />
-            <MenuItem value="wantToRead" primaryText="Want To Read" />
-            <MenuItem value="read" primaryText="Read" />
-          </DropDownMenu>
+          {isWaitingResponse && <span className="updating-message">Updating...</span>}
+          {!isWaitingResponse && (
+            <DropDownMenu value={shelf} onChange={this.onChangeBookShelf}>
+              <MenuItem value="none" primaryText="None" />
+              <MenuItem value="currentlyReading" primaryText="Currently Reading" />
+              <MenuItem value="wantToRead" primaryText="Want To Read" />
+              <MenuItem value="read" primaryText="Read" />
+            </DropDownMenu>
+          )}
         </CardActions>
       </Card>
     );

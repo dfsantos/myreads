@@ -141,3 +141,145 @@ exports[`default snapshot 1`] = `
   </CardActions>
 </Card>
 `;
+
+exports[`snapshot without author 1`] = `
+<Card
+  expandable={false}
+  expanded={null}
+  initiallyExpanded={false}
+  style={
+    Object {
+      "heigth": 250,
+      "margin": 10,
+      "padding": 3,
+      "width": 210,
+    }
+  }
+>
+  <CardMedia>
+    <div
+      className="cover-wrapper"
+    >
+      <img
+        alt="Book's Title"
+        src=""
+        style={
+          Object {
+            "heigth": 250,
+            "maxWidth": 203,
+            "minWidth": 203,
+            "width": 203,
+          }
+        }
+      />
+    </div>
+  </CardMedia>
+  <CardText>
+    Unknown Author
+  </CardText>
+  <CardActions>
+    <DropDownMenu
+      anchorOrigin={
+        Object {
+          "horizontal": "left",
+          "vertical": "top",
+        }
+      }
+      animated={true}
+      autoWidth={true}
+      disabled={false}
+      iconButton={<NavigationArrowDropDown />}
+      maxHeight={500}
+      multiple={false}
+      onChange={[Function]}
+      openImmediately={false}
+      value="none"
+    >
+      <MenuItem
+        anchorOrigin={
+          Object {
+            "horizontal": "right",
+            "vertical": "top",
+          }
+        }
+        checked={false}
+        desktop={false}
+        disabled={false}
+        focusState="none"
+        insetChildren={false}
+        primaryText="None"
+        targetOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "top",
+          }
+        }
+        value="none"
+      />
+      <MenuItem
+        anchorOrigin={
+          Object {
+            "horizontal": "right",
+            "vertical": "top",
+          }
+        }
+        checked={false}
+        desktop={false}
+        disabled={false}
+        focusState="none"
+        insetChildren={false}
+        primaryText="Currently Reading"
+        targetOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "top",
+          }
+        }
+        value="currentlyReading"
+      />
+      <MenuItem
+        anchorOrigin={
+          Object {
+            "horizontal": "right",
+            "vertical": "top",
+          }
+        }
+        checked={false}
+        desktop={false}
+        disabled={false}
+        focusState="none"
+        insetChildren={false}
+        primaryText="Want To Read"
+        targetOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "top",
+          }
+        }
+        value="wantToRead"
+      />
+      <MenuItem
+        anchorOrigin={
+          Object {
+            "horizontal": "right",
+            "vertical": "top",
+          }
+        }
+        checked={false}
+        desktop={false}
+        disabled={false}
+        focusState="none"
+        insetChildren={false}
+        primaryText="Read"
+        targetOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "top",
+          }
+        }
+        value="read"
+      />
+    </DropDownMenu>
+  </CardActions>
+</Card>
+`;

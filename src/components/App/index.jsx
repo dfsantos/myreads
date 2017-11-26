@@ -15,6 +15,7 @@ const initialState = {
   isSideBarOpen: false,
   shelfConfig,
   searchSuggestions,
+  isLoadingBooks: true,
 };
 
 const mergeUserAndSearchBooks = (userBooks, searchBooks) => {
@@ -26,6 +27,18 @@ const mergeUserAndSearchBooks = (userBooks, searchBooks) => {
   });
 };
 
+const loadState = async () => {
+  const localState = JSON.parse(localStorage.getItem('state'));
+  if (!localState) {
+    const remoteBooks = await BooksAPI.getAll();
+    const resolvedState = Object.assign(initialState, { books: remoteBooks });
+    localStorage.setItem('state', JSON.stringify(resolvedState));
+    return resolvedState;
+  } else {
+    return localState;
+  }
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,17 +48,24 @@ class App extends Component {
     this.onSearchBooks = this.onSearchBooks.bind(this);
   }
 
+  componentDidMount() {
+    loadState().then(state => {
+      this.setState(Object.assign(state, { isLoadingBooks: false }));
+    });
+  }
+
   onCategorizeBook(book) {
     return shelf => {
-      this.setState(state => {
-        const books = state.books
-          .filter(it => it.id !== book.id)
-          .concat(Object.assign(book, { shelf }));
+      BooksAPI.update(book, shelf).then(() => {
+        this.setState(state => {
+          const books = state.books
+            .filter(it => it.id !== book.id)
+            .concat(Object.assign(book, { shelf }));
 
-        const newState = Object.assign(state, { books });
-        localStorage.setItem('state', JSON.stringify(state));
-        BooksAPI.update(book, book.shelf);
-        return newState;
+          const newState = Object.assign(state, { books, updateError: false });
+          localStorage.setItem('state', JSON.stringify(state));
+          return newState;
+        });
       });
     };
   }
@@ -64,7 +84,7 @@ class App extends Component {
   }
 
   render() {
-    const { isSideBarOpen } = this.state;
+    const { isSideBarOpen, isLoadingBooks } = this.state;
     return (
       <div className="App">
         <AppBar title="BookFlix" onLeftIconButtonTouchTap={this.handleToggleSideBar} />
@@ -76,6 +96,7 @@ class App extends Component {
             const { books, shelfConfig } = this.state;
             return (
               <Shelves
+                isLoadingBooks={isLoadingBooks}
                 books={books}
                 configuration={shelfConfig}
                 onCategorizeBook={this.onCategorizeBook}

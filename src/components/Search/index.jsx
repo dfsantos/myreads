@@ -39,6 +39,8 @@ class Search extends Component {
         {isWaitingResponse && (
           <div className="loading">
             <CircularProgress size={80} thickness={5} color="#ff3d00" />
+            <br />
+            <span>Searching books...</span>
           </div>
         )}
         {!isWaitingResponse && (
