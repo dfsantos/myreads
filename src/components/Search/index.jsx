@@ -12,6 +12,10 @@ const propTypes = {
   searchSuggestions: PropTypes.arrayOf(PropTypes.string),
 };
 
+const defaultProps = {
+  searchSuggestions: [],
+};
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -53,5 +57,6 @@ class Search extends Component {
 }
 
 Search.propTypes = propTypes;
+Search.defaultProps = defaultProps;
 
 export default Search;

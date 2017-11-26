@@ -37,10 +37,8 @@ class Book extends Component {
   }
 
   onChangeBookShelf(...args) {
-    this.setState(
-      { shelf: args[SELECTED_VALUE] },
-      this.props.onChangeBookShelf(args[SELECTED_VALUE])
-    );
+    this.setState({ shelf: args[SELECTED_VALUE] });
+    this.props.onChangeBookShelf(args[SELECTED_VALUE]);
   }
 
   render() {

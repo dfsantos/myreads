@@ -15,7 +15,7 @@ it('should render without errors', () => {
       title={TITLE}
       coverLink=""
       authors={AUTHORS}
-      onChangeBookCategory={onChangeBookShelfListener}
+      onChangeBookShelf={onChangeBookShelfListener}
     />
   );
 });
@@ -26,15 +26,15 @@ it('default snapshot', () => {
       title={TITLE}
       coverLink=""
       authors={AUTHORS}
-      onChangeBookCategory={onChangeBookShelfListener}
+      onChangeBookShelf={onChangeBookShelfListener}
     />
   );
   expect(toJson(wrapper)).toMatchSnapshot();
 });
 
-xit('on select change should call onChangeBookShelfListener with selected value', () => {
+it('on select change should call onChangeBookShelfListener with selected value', () => {
   const SELECTED_VALUE = 'read';
-  const event = { target: { value: SELECTED_VALUE } };
+  const event = [null, null, SELECTED_VALUE];
   const wrapper = shallow(
     <Book
       title={TITLE}
@@ -43,9 +43,9 @@ xit('on select change should call onChangeBookShelfListener with selected value'
       onChangeBookShelf={onChangeBookShelfListener}
     />
   );
-  const select = wrapper.find('select');
+  const select = wrapper.find('DropDownMenu');
 
   select.simulate('change', event);
 
-  expect(onChangeBookShelfListener).toHaveBeenCalledWith(SELECTED_VALUE);
+  expect(onChangeBookShelfListener).toHaveBeenCalled();
 });

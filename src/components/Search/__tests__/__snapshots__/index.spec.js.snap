@@ -10,6 +10,7 @@ exports[`default snapshot 1`] = `
   <div>
     <SearchSuggestion
       pause={false}
+      words={Array []}
     />
     <SearchResult
       books={Array []}
