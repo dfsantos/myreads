@@ -32,6 +32,7 @@ function SearchResult({ searchQuery, books, onCategorizeBook }) {
               coverLink={book.imageLinks.thumbnail}
               authors={book.authors}
               description={book.description}
+              shelf={book.shelf}
               onChangeBookShelf={onCategorizeBook(book)}
             />
           ))}

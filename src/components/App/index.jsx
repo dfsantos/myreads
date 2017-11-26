@@ -17,6 +17,15 @@ const initialState = {
   searchSuggestions,
 };
 
+const mergeUserAndSearchBooks = (userBooks, searchBooks) => {
+  return searchBooks.map((searchBook, index) => {
+    userBooks.forEach(userBook => {
+      if (searchBook.id === userBook.id) searchBook.shelf = userBook.shelf;
+    });
+    return searchBook;
+  });
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,8 +41,10 @@ class App extends Component {
         const books = state.books
           .filter(it => it.id !== book.id)
           .concat(Object.assign(book, { shelf }));
+
         const newState = Object.assign(state, { books });
         localStorage.setItem('state', JSON.stringify(state));
+        BooksAPI.update(book, book.shelf);
         return newState;
       });
     };
@@ -43,7 +54,7 @@ class App extends Component {
     let searchResult = [];
     if (searchQuery.length > 0) {
       const result = await BooksAPI.search(searchQuery, 20);
-      searchResult = result.error ? [] : result;
+      searchResult = result.error ? [] : mergeUserAndSearchBooks(this.state.books, result);
     }
     return searchResult;
   }
@@ -73,6 +84,7 @@ class App extends Component {
           path="/search"
           render={() => (
             <Search
+              userBooks={books}
               searchSuggestions={searchSuggestions}
               onCategorizeBook={this.onCategorizeBook}
               onSearchBooks={this.onSearchBooks}
