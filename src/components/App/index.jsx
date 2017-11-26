@@ -64,7 +64,7 @@ class App extends Component {
   }
 
   render() {
-    const { books, isSideBarOpen, shelfConfig, searchSuggestions } = this.state;
+    const { isSideBarOpen } = this.state;
     return (
       <div className="App">
         <AppBar title="BookFlix" onLeftIconButtonTouchTap={this.handleToggleSideBar} />
@@ -72,24 +72,29 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={() => (
-            <Shelves
-              books={books}
-              configuration={shelfConfig}
-              onCategorizeBook={this.onCategorizeBook}
-            />
-          )}
+          render={() => {
+            const { books, shelfConfig } = this.state;
+            return (
+              <Shelves
+                books={books}
+                configuration={shelfConfig}
+                onCategorizeBook={this.onCategorizeBook}
+              />
+            );
+          }}
         />
         <Route
           path="/search"
-          render={() => (
-            <Search
-              userBooks={books}
-              searchSuggestions={searchSuggestions}
-              onCategorizeBook={this.onCategorizeBook}
-              onSearchBooks={this.onSearchBooks}
-            />
-          )}
+          render={() => {
+            const { searchSuggestions } = this.state;
+            return (
+              <Search
+                searchSuggestions={searchSuggestions}
+                onCategorizeBook={this.onCategorizeBook}
+                onSearchBooks={this.onSearchBooks}
+              />
+            );
+          }}
         />
       </div>
     );
