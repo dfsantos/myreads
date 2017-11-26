@@ -10,6 +10,7 @@ install:
 script:
   - npm test -- --coverage
   - npm run build
+  - codecov
 deploy:
   provider: pages
   skip_cleanup: true
