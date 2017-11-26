@@ -79,6 +79,10 @@ ol li {
   font-weight: bold;
 }
 
+#root > div > div.list-books > div > div > div.shelf-content > div > div > div:nth-child(2) {
+  height: 60px;
+}
+
 .books-grid {
   list-style-type: none;
   padding: 0;
