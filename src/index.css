@@ -79,6 +79,15 @@ ol li {
   font-weight: bold;
 }
 
+#root
+  > div
+  > div.search-books
+  > div
+  > div.search-books-results
+  > div
+  > div
+  > div
+  > div:nth-child(2),
 #root > div > div.list-books > div > div > div.shelf-content > div > div > div:nth-child(2) {
   height: 60px;
 }

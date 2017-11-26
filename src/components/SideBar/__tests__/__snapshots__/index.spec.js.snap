@@ -41,6 +41,14 @@ exports[`snapshot of SideBar closed 1`] = `
         }
       }
     >
+      <AvLibraryBooks
+        style={
+          Object {
+            "color": "#ff6d00",
+            "marginRight": "10px",
+          }
+        }
+      />
       My Shelves
     </MenuItem>
   </Link>
@@ -68,6 +76,14 @@ exports[`snapshot of SideBar closed 1`] = `
         }
       }
     >
+      <ActionSearch
+        style={
+          Object {
+            "color": "#ff6d00",
+            "marginRight": "10px",
+          }
+        }
+      />
       Search
     </MenuItem>
   </Link>
@@ -115,6 +131,14 @@ exports[`snapshot of SideBar opened 1`] = `
         }
       }
     >
+      <AvLibraryBooks
+        style={
+          Object {
+            "color": "#ff6d00",
+            "marginRight": "10px",
+          }
+        }
+      />
       My Shelves
     </MenuItem>
   </Link>
@@ -142,6 +166,14 @@ exports[`snapshot of SideBar opened 1`] = `
         }
       }
     >
+      <ActionSearch
+        style={
+          Object {
+            "color": "#ff6d00",
+            "marginRight": "10px",
+          }
+        }
+      />
       Search
     </MenuItem>
   </Link>
