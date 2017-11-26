@@ -1,5 +1,6 @@
 [![codebeat badge](https://codebeat.co/badges/65124de0-eae4-4e77-985c-1bdba923e9e0)](https://codebeat.co/projects/github-com-dfsantos-myreads-master)
 [![Build Status](https://travis-ci.org/dfsantos/myreads.svg?branch=master)](https://travis-ci.org/dfsantos/myreads)
+[![codecov](https://codecov.io/gh/dfsantos/myreads/branch/master/graph/badge.svg)](https://codecov.io/gh/dfsantos/myreads)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
