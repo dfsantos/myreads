@@ -196,6 +196,9 @@ ol li {
 .cover-wrapper,
 .cover-wrapper img {
   height: 250px;
+  font-size: 24px !important;
+  font-weight: bold;
+  text-align: center;
 }
 
 body > div:nth-child(5) > div > div > div > div > span > div > div {

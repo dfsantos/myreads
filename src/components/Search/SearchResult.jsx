@@ -29,7 +29,7 @@ function SearchResult({ searchQuery, books, onCategorizeBook }) {
               key={book.id}
               title={book.title}
               subtitle={book.subtitle}
-              coverLink={book.imageLinks.thumbnail}
+              coverLink={book.imageLinks ? book.imageLinks.thumbnail : ''}
               authors={book.authors}
               description={book.description}
               shelf={book.shelf}
