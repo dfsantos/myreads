@@ -193,12 +193,24 @@ ol li {
   font-weight: bold;
 }
 
+.card {
+  width: 210px;
+  padding: 3px;
+  margin: 10px;
+}
+
 .cover-wrapper,
 .cover-wrapper img {
   height: 250px;
   font-size: 24px !important;
   font-weight: bold;
   text-align: center;
+}
+
+.cover-wrapper img {
+  width: 203px;
+  max-width: 203px;
+  min-width: 203px;
 }
 
 body > div:nth-child(5) > div > div > div > div > span > div > div {

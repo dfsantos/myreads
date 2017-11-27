@@ -2,17 +2,10 @@
 
 exports[`default snapshot 1`] = `
 <Card
+  className="card"
   expandable={false}
   expanded={null}
   initiallyExpanded={false}
-  style={
-    Object {
-      "heigth": 250,
-      "margin": 10,
-      "padding": 3,
-      "width": 210,
-    }
-  }
 >
   <CardMedia>
     <div
@@ -21,14 +14,6 @@ exports[`default snapshot 1`] = `
       <img
         alt="Book's Title"
         src=""
-        style={
-          Object {
-            "heigth": 250,
-            "maxWidth": 203,
-            "minWidth": 203,
-            "width": 203,
-          }
-        }
       />
     </div>
   </CardMedia>
@@ -144,17 +129,10 @@ exports[`default snapshot 1`] = `
 
 exports[`snapshot without author 1`] = `
 <Card
+  className="card"
   expandable={false}
   expanded={null}
   initiallyExpanded={false}
-  style={
-    Object {
-      "heigth": 250,
-      "margin": 10,
-      "padding": 3,
-      "width": 210,
-    }
-  }
 >
   <CardMedia>
     <div
@@ -163,14 +141,6 @@ exports[`snapshot without author 1`] = `
       <img
         alt="Book's Title"
         src=""
-        style={
-          Object {
-            "heigth": 250,
-            "maxWidth": 203,
-            "minWidth": 203,
-            "width": 203,
-          }
-        }
       />
     </div>
   </CardMedia>

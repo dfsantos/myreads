@@ -7,13 +7,14 @@ import Shelf from './Shelf';
 const propTypes = {
   books: PropTypes.array,
   onCategorizeBook: PropTypes.func.isRequired,
-  configuration: PropTypes.array.isRequired,
+  configuration: PropTypes.array,
   isLoadingBooks: PropTypes.bool,
 };
 
 const defaultProps = {
   books: [],
   isLoadingBooks: false,
+  configuration: [],
 };
 
 function Shelves({ books, configuration, onCategorizeBook, isLoadingBooks }) {

@@ -20,11 +20,6 @@ const defaultProps = {
 
 const SELECTED_VALUE = 2;
 
-const style = {
-  bookCard: { heigth: 250, width: 210, padding: 3, margin: 10 },
-  bookCover: { heigth: 250, width: 203, maxWidth: 203, minWidth: 203 },
-};
-
 class Book extends Component {
   constructor(props) {
     super(props);
@@ -47,10 +42,10 @@ class Book extends Component {
     const authorInfo = !authors.length ? 'Unknown Author' : authors.join(', ').trim();
 
     return (
-      <Card style={style.bookCard}>
+      <Card className="card">
         <CardMedia>
           <div className="cover-wrapper">
-            <img src={coverLink} alt={title} style={style.bookCover} />
+            <img src={coverLink} alt={title} />
           </div>
         </CardMedia>
         <CardText>{authorInfo}</CardText>
