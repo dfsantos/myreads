@@ -42,7 +42,7 @@ const loadState = async () => {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = JSON.parse(localStorage.getItem('state')) || initialState;
+    this.state = initialState;
     this.onCategorizeBook = this.onCategorizeBook.bind(this);
     this.handleToggleSideBar = this.handleToggleSideBar.bind(this);
     this.onSearchBooks = this.onSearchBooks.bind(this);
